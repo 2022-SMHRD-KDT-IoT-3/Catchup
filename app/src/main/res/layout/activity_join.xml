@@ -35,14 +35,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toplogo" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navi"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
@@ -59,15 +51,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="304dp"
-        android:layout_height="353dp"
+        android:layout_width="291dp"
+        android:layout_height="370dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="176dp">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,7 +70,10 @@
             <EditText
                 android:id="@+id/edt_join_id"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_bg"
+                android:drawableStart="@drawable/id_resize"
+                android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="@string/user_id"
                 android:inputType="textPersonName"
@@ -100,8 +96,11 @@
         <EditText
             android:id="@+id/edt_join_pw"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/pw_resize"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/user_pw"
             android:inputType="textPassword"
@@ -110,8 +109,11 @@
         <EditText
             android:id="@+id/edt_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/user_resize"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/user_name"
             android:inputType="textPersonName"
@@ -120,8 +122,11 @@
         <EditText
             android:id="@+id/edt_nick"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/nickname_resize"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/nickname"
             android:inputType="textPersonName"
@@ -130,8 +135,11 @@
         <EditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/email_resize"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -140,8 +148,11 @@
         <EditText
             android:id="@+id/edt_num"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/robot_resize"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/serial_num"
             android:inputType="textPersonName"
