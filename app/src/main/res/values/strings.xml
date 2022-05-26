@@ -1,9 +1,3 @@
 <resources>
     <string name="app_name">Catchup_Android</string>
-    <string name="user_id">아이디</string>
-    <string name="user_pw">비밀번호</string>
-    <string name="user_name">사용자 이름</string>
-    <string name="nickname">닉네임</string>
-    <string name="email">이메일</string>
-    <string name="serial_num">사용기계넘버</string>
 </resources>
