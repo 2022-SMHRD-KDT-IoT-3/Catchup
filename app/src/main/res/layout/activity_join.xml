@@ -35,20 +35,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toplogo" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="150dp"
-        android:text="회원가입"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="291dp"
@@ -80,7 +66,7 @@
                 android:textColorHint="@color/text_hint" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/btn_idChk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="중복체크" />
@@ -133,7 +119,7 @@
             android:textColorHint="@color/text_hint" />
 
         <EditText
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_mail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -146,7 +132,7 @@
             android:textColorHint="@color/text_hint" />
 
         <EditText
-            android:id="@+id/edt_num"
+            android:id="@+id/edt_serial"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -159,5 +145,15 @@
             android:textColorHint="@color/text_hint" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_join"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:text="회원 가입"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

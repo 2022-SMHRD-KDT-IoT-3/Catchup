@@ -37,7 +37,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/user_pw"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColorHint="@color/text_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_join_id" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_loginSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -83,7 +83,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_loginSubmit" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_joinMove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -121,5 +121,7 @@
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_join" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
