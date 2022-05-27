@@ -1,6 +1,5 @@
 package kr.catchup.mapper;
 
-
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;

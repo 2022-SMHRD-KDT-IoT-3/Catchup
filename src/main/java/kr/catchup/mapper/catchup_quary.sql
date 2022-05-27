@@ -5,6 +5,7 @@ use mysql;
 
 
 select * from t_user;
+select * from t_monitor;
 
 -- t_user Table Create SQL
 CREATE TABLE t_user

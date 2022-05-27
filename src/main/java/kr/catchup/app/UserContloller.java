@@ -130,18 +130,7 @@ public class UserContloller {
 	 * System.out.println(list.size()); return list ; }
 	 * 
 	 * 
-	 * 
-	 * ///// 안드로이드에서 로그인
-	 * 
-	 * @RequestMapping("/andLogin.do") public @ResponseBody UserVO andLogin(UserVO
-	 * vo) { // android에서 로그인 요청시 로그인에 성공하게 되면 // MemberVO를 JSON형태로 변환해서 돌려주는 메소드
-	 * 
-	 * 
-	 * UserVO info = mapper.loginSelect(vo); return info;
-	 * 
-	 * 
-	 * }
-	 * 
+	
 	 */
 
 }
