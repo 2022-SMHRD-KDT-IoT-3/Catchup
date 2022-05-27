@@ -89,7 +89,7 @@ public class Login2 extends AppCompatActivity {
 
                 Log.v("resultValue",response.length() +"");
 
-                if (response.length() > 0) {
+                if (response.length() > 5) {
                     //로그인 성공
                     try {
                         JSONObject jsonObject=new JSONObject(response);
@@ -108,9 +108,9 @@ public class Login2 extends AppCompatActivity {
 
                          LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial);
 
-                       /* Intent intent = new Intent(getApplicationContext(),Home.class );
+                        Intent intent = new Intent(getApplicationContext(),Home.class );
                         startActivity(intent);
-                        finish();*/
+                        finish();
 
 
                     } catch (JSONException e) {

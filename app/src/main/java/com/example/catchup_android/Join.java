@@ -47,7 +47,7 @@ public class Join extends AppCompatActivity {
         btn_join=findViewById(R.id.btn_join);
         
         
-        // 아이디 중복체크  미구현
+        // 아이디 중복체크 미구현
         btn_idChk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,8 +61,6 @@ public class Join extends AppCompatActivity {
             public void onClick(View view) {
 
                 sendRequest();
-
-                //Log.v("resultValue","가입버튼 감지");
             }
         });
 
