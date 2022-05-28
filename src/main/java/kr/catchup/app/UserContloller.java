@@ -73,18 +73,7 @@ public class UserContloller {
 
 		return "redirect:/login.do";
 	}
-
 	
-
-	// app/logout.do를 요청했을 때 실행되는 메소드
-	@RequestMapping("/logout.do")
-	public String logout(HttpSession session) {
-		System.out.println("-logout");
-
-		session.removeAttribute("info");
-
-		return "redirect:/login.do";
-	}
 
 	// app/idCheck.do를 요청했을때 실행되는 메소드
 
@@ -115,7 +104,15 @@ public class UserContloller {
 	 * // if (info != null) { // session.setAttribute("info", info); // } return
 	 * "redirect:/boardList.do"; }
 	 * 
-	 * 
+	 * // app/logout.do를 요청했을 때 실행되는 메소드
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		System.out.println("-logout");
+
+		session.removeAttribute("info");
+
+		return "redirect:/login.do";
+	}
 	 * 
 	 * 
 	 * //app/userList.do를 요청했을때 실행되는 메소드

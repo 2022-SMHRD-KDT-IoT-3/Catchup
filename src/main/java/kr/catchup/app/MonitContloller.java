@@ -27,32 +27,13 @@ public class MonitContloller {
 	// app/monitInsert.do? 를 요청했을 때 실행되는 메소드
 	// /monitInsert.do 자체에서는 500오류발생. 요청할때 항상 쿼리스트링을 써야한다
 	@RequestMapping("/monitInsert.do")
-	public void monitInsert(MonitVo vo, HttpServletResponse response, String monit_area,String monit_time, String monit_done,
-			String monit_infected, String user_id) {
+	public void monitInsert(MonitVo vo) {
 
 		System.out.println("-monitInsert.do");
 
-		//System.out.println(
-		//		"구역 : " + monit_area + " 완료? : " + monit_done + " 감염? : " + monit_infected + " 아이디 : " + user_id);
-
-		// 문자형을 char자료형으로 변환
-		char temp_done = monit_done.charAt(0);		
-		char temp_infected = monit_infected.charAt(0);
-
-		vo.setMonit_area(monit_area);
-		vo.setMonit_time(monit_time);
-		vo.setMonit_done(temp_done);
-		vo.setMonit_infected(temp_infected);
-		vo.setUser_id(user_id);
-
-		System.out.println(vo.toString());
-
-		if (monit_area != null && user_id != null) {
+		
+		System.out.println(vo);
 			mapper.monitInsert(vo);
-			System.out.println("[monitInsert 성공]");
-		} else {
-			System.out.println("[monitInsert 통과]");
-		}
 
 	}
 	/*

@@ -3,8 +3,8 @@
 <mapper namespace="kr.catchup.mapper.MonitMapper">
 	
     <insert id="monitInsert" parameterType="kr.catchup.mapper.MonitVo">
-		insert into t_monitor (monit_area,monit_time ,monit_done,monit_infected,user_id )
-		values(#{monit_area},#{monit_time},#{monit_done},#{monit_infected},#{user_id} )
+		insert into t_monitor (monit_area,monit_done,monit_infected,user_id,res_seq)
+		values(#{monit_area},#{monit_done},#{monit_infected},#{user_id},#{res_seq})
 	</insert>
 	
      

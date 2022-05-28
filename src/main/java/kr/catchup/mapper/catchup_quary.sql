@@ -1,12 +1,24 @@
 show databases;
-use catchup_db;
-select * ;
-use mysql;
+--use mysql;
 
+use chatchup;
+
+-- drop table t_user;
+-- drop table t_monitor;
+-- drop table t_environment;
 
 select * from t_user;
 select * from t_monitor;
+select * from t_reservation;
+select * from t_environment;
 
+insert into t_monitor (monit_area,monit_time ,monit_done,monit_infected,user_id )
+		values(#{monit_area},sysdata(),#{monit_done},#{monit_infected},#{user_id} )
+
+insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
+		values(res_pesticide(),#{res_rsvtime},#{monit_infected},#{user_id} )	
+
+	
 -- t_user Table Create SQL
 CREATE TABLE t_user
 (
@@ -31,7 +43,7 @@ CREATE TABLE t_board
     `board_title`    VARCHAR(200)      NOT NULL    COMMENT '게시글 제목', 
     `board_time`     DATETIME          NOT NULL    DEFAULT now() COMMENT '게시글 작성시간', 
     `board_content`  VARCHAR(4000)     NOT NULL    COMMENT '게시글 내용', 
-    `board_cnt`      NUMERIC(12, 0)    NOT NULL    AUTO_INCREMENT COMMENT '게시글 조회수', 
+    `board_cnt`      NUMERIC(12, 0)    NOT NULL    COMMENT '게시글 조회수', 
     `board_commcnt`  NUMERIC(12, 0)    NOT NULL    COMMENT '게시글 댓글 수', 
     `user_id`        VARCHAR(30)       NOT NULL    COMMENT '회원 아이디', 
      PRIMARY KEY (board_seq)
@@ -64,9 +76,9 @@ ALTER TABLE t_reservation
 -- t_monitor Table Create SQL
 CREATE TABLE t_monitor
 (
-    `monit_seq`       NUMERIC(12, 0)    NOT NULL    AUTO_INCREMENT COMMENT '모니터링 순번', 
+    `monit_seq`       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '모니터링 순번', 
     `monit_area`      VARCHAR(50)       NOT NULL    COMMENT '모니터링 구역', 
-    `monit_time`      DATETIME          NOT NULL    COMMENT '모니터링 시간', 
+    `monit_time`      DATETIME          NOT NULL DEFAULT now()   COMMENT '모니터링 시간', 
     `monit_done`      CHAR(1)           NOT NULL    COMMENT '모니터링 완료여부', 
     `monit_infected`  CHAR(1)           NOT NULL    COMMENT '모니터링 전염여부', 
     `user_id`         VARCHAR(30)       NOT NULL    COMMENT '회원 아이디', 
@@ -88,12 +100,12 @@ ALTER TABLE t_monitor
 -- t_environment Table Create SQL
 CREATE TABLE t_environment
 (
-    `evnr_seq`     INT UNSIGNED      NOT NULL    AUTO_INCREMENT COMMENT '환경 순번', 
-    `evnr_temprt`  NUMERIC(18, 1)    NOT NULL    COMMENT '환경 온도', 
-    `evnr_humid`   NUMERIC(18, 1)    NOT NULL    COMMENT '환경 습도', 
-    `evnr_time`    DATETIME          NOT NULL    DEFAULT now() COMMENT '환경 시간', 
+    `env_seq`     INT UNSIGNED      NOT NULL    AUTO_INCREMENT COMMENT '환경 순번', 
+    `env_temprt`  NUMERIC(18, 1)    NOT NULL    COMMENT '환경 온도', 
+    `env_humid`   NUMERIC(18, 1)    NOT NULL    COMMENT '환경 습도', 
+    `env_time`    DATETIME          NOT NULL    DEFAULT now() COMMENT '환경 시간', 
     `user_id`      VARCHAR(30)       NOT NULL    COMMENT '회원 아이디', 
-     PRIMARY KEY (evnr_seq)
+     PRIMARY KEY (env_seq)
 );
 
 ALTER TABLE t_environment COMMENT '환경 테이블';
@@ -106,7 +118,7 @@ ALTER TABLE t_environment
 -- t_farm Table Create SQL
 CREATE TABLE t_farm
 (
-    `farm_seq`      NUMERIC(12, 0)    NOT NULL    AUTO_INCREMENT COMMENT '농장 번호', 
+    `farm_seq`      INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '농장 번호', 
     `farm_plant`    NUMERIC(18, 0)    NOT NULL    COMMENT '농장 주수', 
     `farm_linenum`  NUMERIC(12, 0)    NOT NULL    COMMENT '농장 라인수', 
     `farm_areanum`  NUMERIC(12, 0)    NOT NULL    COMMENT '농장 구역수', 
@@ -124,7 +136,7 @@ ALTER TABLE t_farm
 -- t_reply Table Create SQL
 CREATE TABLE t_reply
 (
-    `rep_seq`      NUMERIC(12, 0)    NOT NULL    AUTO_INCREMENT COMMENT '댓글 순번', 
+    `rep_seq`      INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '댓글 순번', 
     `rep_content`  VARCHAR(4000)     NOT NULL    COMMENT '댓글 내용', 
     `rep_time`     DATETIME          NOT NULL    DEFAULT now() COMMENT '댓글 작성날짜', 
     `uesr_id`      VARCHAR(30)       NOT NULL    COMMENT '유저 아이디', 
@@ -159,3 +171,15 @@ ALTER TABLE t_diary COMMENT '다이어리 테이블';
 ALTER TABLE t_diary
     ADD CONSTRAINT FK_t_diary_diary_id_t_user_user_id FOREIGN KEY (diary_id)
         REFERENCES t_user (user_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        
+
+-- 테스트데이터		
+insert into t_user 
+		values("12","12","12","12","12","12345",now() );		
+insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
+		values("pestTest","2022-05-28 11:14:41","12" );
+insert into t_monitor (monit_area ,monit_done,monit_infected,user_id,res_seq )
+		values("1","1","1","12",1);	
+
+insert into t_user 
+		values("pbk","12","bk","bkbk","pbk@com","123456",now() );		
