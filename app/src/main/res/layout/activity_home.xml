@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
-<<<<<<< 4b87d4aa0276472010595dbb2e5b7007a64c3952
-=======
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -67,9 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_result_home" />
-<<<<<<< HEAD
->>>>>>> 220526 commit_andro
-=======
+
 
     <Button
         android:id="@+id/btn_toMyP"
@@ -81,5 +77,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_result_home" />
->>>>>>> android
+
 </androidx.constraintlayout.widget.ConstraintLayout>
