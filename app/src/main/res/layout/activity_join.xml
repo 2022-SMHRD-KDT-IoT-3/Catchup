@@ -35,6 +35,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toplogo" />
 
+<<<<<<< 4b87d4aa0276472010595dbb2e5b7007a64c3952
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navi"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
@@ -49,18 +58,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+=======
+>>>>>>> 220526 commit_andro
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="291dp"
-        android:layout_height="370dp"
+        android:layout_width="304dp"
+        android:layout_height="353dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        tools:layout_editor_absoluteY="176dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,17 +80,14 @@
             <EditText
                 android:id="@+id/edt_join_id"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:background="@drawable/edit_text_bg"
-                android:drawableStart="@drawable/id_resize"
-                android:drawablePadding="10dp"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="@string/user_id"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/text_hint" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/btn_idChk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="중복체크" />
@@ -96,11 +103,8 @@
         <EditText
             android:id="@+id/edt_join_pw"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableStart="@drawable/pw_resize"
-            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/user_pw"
             android:inputType="textPassword"
@@ -109,11 +113,8 @@
         <EditText
             android:id="@+id/edt_name"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableStart="@drawable/user_resize"
-            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/user_name"
             android:inputType="textPersonName"
@@ -122,42 +123,43 @@
         <EditText
             android:id="@+id/edt_nick"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableStart="@drawable/nickname_resize"
-            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/nickname"
             android:inputType="textPersonName"
             android:textColorHint="@color/text_hint" />
 
         <EditText
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_mail"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableStart="@drawable/email_resize"
-            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/text_hint" />
 
         <EditText
-            android:id="@+id/edt_num"
+            android:id="@+id/edt_serial"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableStart="@drawable/robot_resize"
-            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/serial_num"
             android:inputType="textPersonName"
             android:textColorHint="@color/text_hint" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_join"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:text="회원 가입"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
