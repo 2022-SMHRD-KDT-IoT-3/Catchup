@@ -35,6 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toplogo" />
 
+<<<<<<< HEAD
 <<<<<<< 4b87d4aa0276472010595dbb2e5b7007a64c3952
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navi"
@@ -60,6 +61,8 @@
 
 =======
 >>>>>>> 220526 commit_andro
+=======
+>>>>>>> android
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="304dp"

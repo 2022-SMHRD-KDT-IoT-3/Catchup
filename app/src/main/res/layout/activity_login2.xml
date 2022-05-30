@@ -87,6 +87,7 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="76dp"
         android:ems="10"
+<<<<<<< HEAD
 <<<<<<< 4b87d4aa0276472010595dbb2e5b7007a64c3952
         android:hint="아이디를 입력해주세요."
         android:inputType="textPersonName"
@@ -94,6 +95,10 @@
         android:hint="@string/user_pw"
         android:inputType="textPassword"
 >>>>>>> 220526 commit_andro
+=======
+        android:hint="@string/user_pw"
+        android:inputType="textPassword"
+>>>>>>> android
         android:textColorHint="@color/text_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -180,5 +185,8 @@
 
 
 
+<<<<<<< HEAD
 >>>>>>> 220526 commit_andro
+=======
+>>>>>>> android
 </androidx.constraintlayout.widget.ConstraintLayout>
