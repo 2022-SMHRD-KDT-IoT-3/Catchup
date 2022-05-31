@@ -12,20 +12,23 @@
         android:theme="@style/Theme.Catchup_Android"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.catchup_android.DiaryWrite"
+            android:exported="false" />
+        <activity
             android:name="com.example.catchup_android.Reservation_add"
             android:exported="false" />
         <activity
             android:name=".FindId"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FindPw"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SetPw"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MyFarm"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Monitoring"
             android:exported="true">
@@ -43,7 +46,7 @@
             android:exported="false" />
         <activity
             android:name=".StartActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -52,7 +55,7 @@
             android:exported="false" />
         <activity
             android:name=".Login2"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
