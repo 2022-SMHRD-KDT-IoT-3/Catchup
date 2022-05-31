@@ -6,4 +6,7 @@
     <string name="nickname">닉네임</string>
     <string name="email">이메일</string>
     <string name="serial_num">사용기계넘버</string>
+    <string name="find_id">가입시 등록하신 이름과 이메일을 입력하면 아이디를 알려드립니다.</string>
+    <string name="find_pw">가입시 등록하신 아이디와 이메일을 입력하면 비밀번호 재설정을 할 수 있습니다.</string>
+    <string name="set_pw">새로운 비밀번호를 설정해주세요.</string>
 </resources>

@@ -34,7 +34,7 @@ public class Login2 extends AppCompatActivity {
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
     private EditText edt_join_id, edt_pw;
-    private Button btn_loginSubmit, btn_joinMove;
+    private Button btn_login, btn_join;
 
 
     @Override
@@ -47,11 +47,11 @@ public class Login2 extends AppCompatActivity {
         edt_join_id=findViewById(R.id.edt_join_id);
         edt_pw=findViewById(R.id.edt_pw);
 
-        btn_loginSubmit=findViewById(R.id.btn_loginSubmit);
-        btn_joinMove=findViewById(R.id.btn_joinMove);
+        btn_login=findViewById(R.id.btn_login);
+        btn_join=findViewById(R.id.btn_join);
 
 
-        btn_loginSubmit.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendRequest();
@@ -59,7 +59,7 @@ public class Login2 extends AppCompatActivity {
             }
         });
 
-        btn_joinMove.setOnClickListener(new View.OnClickListener() {
+        btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
         frag_login = new FragmentLogin();
 
-        top_navi = findViewById(R.id.top_navi);
+        /*top_navi = findViewById(R.id.top_navi);*/
 
     }
 }
