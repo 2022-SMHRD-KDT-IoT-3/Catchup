@@ -11,6 +11,8 @@ select * from t_user;
 select * from t_monitor;
 select * from t_reservation;
 select * from t_environment;
+select * from t_user where user_name="pbk" and user_mail="pbk@com";
+
 
 insert into t_monitor (monit_area,monit_time ,monit_done,monit_infected,user_id )
 		values(#{monit_area},sysdata(),#{monit_done},#{monit_infected},#{user_id} )

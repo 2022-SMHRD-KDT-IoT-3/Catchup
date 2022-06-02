@@ -12,13 +12,21 @@ public interface UserMapper {
 
 	UserVo loginSelect(UserVo vo);
 
-	UserVo logout(UserVo vo);
-
-	void updateService(UserVo vo);
-
-	List<UserVo> userList();
-
 	UserVo idCheck(String user_id);
+
+	UserVo findId(UserVo vo);
+
+	//UserVo findId(UserVo vo);
+
+	//UserVo findId(String user_name, String user_email);
+	
+	//void updateService(UserVo vo);
+
+	//List<UserVo> userList();
+	
+	//UserVo logout(UserVo vo);
+
+	//UserVo idCheck(String user_id);
 	
 	//public List<BoardVO> boardList();
 

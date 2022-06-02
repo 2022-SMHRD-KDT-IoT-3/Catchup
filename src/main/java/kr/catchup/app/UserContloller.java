@@ -76,12 +76,47 @@ public class UserContloller {
 	
 
 	// app/idCheck.do를 요청했을때 실행되는 메소드
-
 	@RequestMapping("/idCheck.do")
-	public @ResponseBody UserVo idCheck(String user_id) {
+	public void idCheck(String user_id,HttpServletResponse response) {
+		System.out.println("[중복확인 진입]"+ user_id);
 		UserVo vo = mapper.idCheck(user_id);
-		return vo;
+		
+		Gson gson = new Gson();
+		String value = gson.toJson(vo);
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		out.print(value);
+		
+		
+		System.out.println("[중복확인 이탈]"+ vo);
+		
 	}
+	
+	// app/findId.do를 요청했을때 실행되는 메소드
+		@RequestMapping("/findId.do")
+		public void findId(UserVo vo,HttpServletResponse response) {
+			System.out.println("[findId 진입]"+vo);
+			UserVo data = mapper.findId(vo);
+			
+			System.out.println("data : "+data);
+			
+			Gson gson = new Gson();
+			String value = gson.toJson(data);
+			PrintWriter out = null;
+			try {
+				out = response.getWriter();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			out.print(value);
+			
+			//System.out.println("[findId이탈]"+ value);
+						
+		}
 
 	/*
 	 * // app/update.do를 요청했을 때 실행되는 메소드
