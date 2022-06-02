@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,6 +36,7 @@ public class Login2 extends AppCompatActivity {
 
     private EditText edt_join_id, edt_pw;
     private Button btn_login, btn_join;
+    private TextView tv_toFindId,tv_toFindPw;
 
 
     @Override
@@ -50,23 +52,50 @@ public class Login2 extends AppCompatActivity {
         btn_login=findViewById(R.id.btn_login);
         btn_join=findViewById(R.id.btn_join);
 
+        tv_toFindId=findViewById(R.id.tv_toFindId);
+        tv_toFindPw=findViewById(R.id.tv_toFindPw);
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendRequest();
+                if(edt_join_id.getText().length()>0 ||edt_pw.getText().length()>0   ){
+
+                    sendRequest();
+                }else{
+                    Toast.makeText(getApplicationContext() , "입력을 확인하세요",Toast.LENGTH_SHORT).show();
+                }
+
+
 
             }
         });
 
-        btn_join.setOnClickListener(new View.OnClickListener() {
+       btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(getApplicationContext(),Join.class );
                 startActivity(intent);
                 finish();
+                Log.v("resultValue","[회원가입 진입]");
+            }
+        });
 
+       tv_toFindId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),FindId.class );
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        tv_toFindPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),FindPw.class );
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -75,7 +104,7 @@ public class Login2 extends AppCompatActivity {
 
     public void sendRequest(){
         // Request 객체 생성
-        requestQueue= Volley.newRequestQueue(getApplicationContext()); ///// 안쪽 내용을 this로 대체할수있다
+        requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
         String url="http://211.48.228.42:8081/app/login.do";
 
@@ -90,7 +119,7 @@ public class Login2 extends AppCompatActivity {
                 Log.v("resultValue",response.length() +"");
 
 
-                if (response.length() > 5) {
+                if (response.length() > 5 && edt_join_id.getText()!=null ) {
 
                     //로그인 성공
                     try {
@@ -103,8 +132,9 @@ public class Login2 extends AppCompatActivity {
                         String serial=jsonObject.getString("user_serial");
 
                         Log.v("resultValue",id+"/"+pw+"/"+name+"/"+nick+"/"+mail+"/"+serial);
-
                         //Log.v("resultValue",response);
+
+                        Toast.makeText(getApplicationContext() , id + " 님 환영합니다",Toast.LENGTH_SHORT).show();
 
                          LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial);
 
@@ -156,13 +186,8 @@ public class Login2 extends AppCompatActivity {
                 String pw=edt_pw.getText().toString();
 
                 Log.v("resultValue",id+" "+pw);  // 찍히는 것 확인
-
                 params.put("user_id",id );
                 params.put("user_pw",pw );
-
-//                edt_id.setText("");   ///// 입력했던 내용을 초기화시켜서 다음 입력을 편리하게 만든다 동시에 처리하다보니까 안되는 것이었다 임시로 주석처리
-//                edt_pw.setText("");
-
 
                 return params;
             }

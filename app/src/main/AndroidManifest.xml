@@ -30,11 +30,7 @@
         <activity
             android:name=".FindPw"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SetPw"
@@ -49,13 +45,19 @@
         </activity>
         <activity
             android:name=".Mypage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Join"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".StartActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Home"
             android:exported="false" />
