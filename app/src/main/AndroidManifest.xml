@@ -12,17 +12,30 @@
         android:theme="@style/Theme.Catchup_Android"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.catchup_android.DiaryWrite"
+            android:name="com.example.catchup_android.DiaryList"
             android:exported="false" />
+        <activity
+            android:name="com.example.catchup_android.DiaryWrite"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name="com.example.catchup_android.Reservation_add"
             android:exported="false" />
         <activity
             android:name=".FindId"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".FindPw"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SetPw"
             android:exported="true" />
@@ -32,11 +45,7 @@
         <activity
             android:name=".Monitoring"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Mypage"
