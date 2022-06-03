@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.catchup.mapper.ReservationMapper">
+    
+     <select id="Reservation_list" parameterType="kr.catchup.mapper.ResVo" resultType = "kr.catchup.mapper.ResVo"> <!-- 여러개의 값이면 알아서 list로 묶어줌 -->
+        select res_seq, res_pesticide, res_rsvtime, user_id 
+		from t_reservation 
+		where user_id = #{user_id}
+		and DATE_FORMAT(#{res_rsvtime},'%y/%M/%D') = DATE_FORMAT(res_rsvtime,'%y/%M/%D')
+    </select>
+    
+     <insert id="Reservation_add" parameterType="kr.catchup.mapper.ResVo">
+         insert into t_reservation (res_pesticide, res_rsvtime, user_id)
+         values(#{res_pesticide},#{res_rsvtime}, #{user_id})
+          
+     </insert>
+     
+     <delete id="Reservation_remove" parameterType="kr.catchup.mapper.ResVo">
+         delete from t_reservation where res_seq = #{res_seq}
+     </delete>
+    
+</mapper>
