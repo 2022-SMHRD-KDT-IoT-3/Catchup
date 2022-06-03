@@ -19,7 +19,7 @@ public class MonitVo {
     @NonNull
 	private String monit_area; //  모니터링 구역
     @NonNull
-	private Timestamp monit_time; //  모니터링 시간
+	private String monit_time; //  모니터링 시간
     @NonNull
 	private char monit_done; //  모니터링 완료여부
     @NonNull

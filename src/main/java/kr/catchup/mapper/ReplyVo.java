@@ -20,7 +20,7 @@ public class ReplyVo {
     @NonNull
 	private int rep_content; //  댓글 내용
     @NonNull
-	private Timestamp rep_time; //  댓글 작성날짜
+	private String rep_time; //  댓글 작성날짜
     @NonNull
 	private String user_id; //  회원 아이디
     @NonNull

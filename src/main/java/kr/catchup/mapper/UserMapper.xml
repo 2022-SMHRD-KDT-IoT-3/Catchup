@@ -17,6 +17,15 @@
     <select id="findId" parameterType="kr.catchup.mapper.UserVo" resultType="kr.catchup.mapper.UserVo">
 		select * from t_user where user_name= #{user_name} and user_mail=#{user_mail};
 	</select>
+	
+    <select id="findPw" parameterType="kr.catchup.mapper.UserVo" resultType="kr.catchup.mapper.UserVo">
+		select * from t_user where user_id= #{user_id} and user_mail=#{user_mail};
+	</select>
+	
+    <update id="setPw" parameterType="kr.catchup.mapper.UserVo" >
+		update t_user set user_pw=#{user_pw} where user_id=#{user_id}
+	</update>
+    
     
     
    <!--  <select id="userList" resultType="kr.catchup.mapper.UserVO">

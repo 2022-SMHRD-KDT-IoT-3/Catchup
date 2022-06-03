@@ -20,7 +20,7 @@ public class ResVo {
     @NonNull
 	private String res_pesticide; //  방제 사용약품
     @NonNull
-	private Timestamp res_rsvtime; //  방제 예약 시작시간
+	private String res_rsvtime; //  방제 예약 시작시간
     @NonNull
 	private String user_id; //  회원 아이디
 

@@ -22,7 +22,7 @@ public class BoardVo {
     @NonNull
 	private String board_title; //  게시글 제목
     @NonNull
-	private Timestamp board_time; //  게시글 작성시간
+	private String board_time; //  게시글 작성시간
     @NonNull
 	private String board_content; //  게시글 내용
     @NonNull

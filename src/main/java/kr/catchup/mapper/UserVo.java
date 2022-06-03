@@ -28,7 +28,7 @@ public class UserVo {
     @NonNull
 	private String user_serial; //  회원 사용기계넘버
     @NonNull
-	private Timestamp user_joindate; //  회원 가입일자
+	private String user_joindate; //  회원 가입일자
 
 	
 }

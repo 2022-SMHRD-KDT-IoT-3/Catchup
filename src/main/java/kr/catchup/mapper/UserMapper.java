@@ -16,9 +16,12 @@ public interface UserMapper {
 
 	UserVo findId(UserVo vo);
 
-	//UserVo findId(UserVo vo);
+	UserVo findPw(UserVo vo);
 
-	//UserVo findId(String user_name, String user_email);
+	UserVo setPw(UserVo vo);
+
+	
+	//UserVo setPw(UserVo vo);
 	
 	//void updateService(UserVo vo);
 
