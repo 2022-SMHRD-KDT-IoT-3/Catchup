@@ -1,13 +1,11 @@
 package com.example.catchup_android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,7 +33,7 @@ public class FindId extends AppCompatActivity {
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
     private EditText edt_name,edt_email;
-    private TextView tv_fRes1,tv_fRes2,tv_fRes3;
+    private TextView tv_fRes;
     private Button btn_findId;
 
     @Override
@@ -43,12 +41,10 @@ public class FindId extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
 
-        edt_name=findViewById(R.id.edt_name);
+        edt_name=findViewById(R.id.edt_id);
         edt_email=findViewById(R.id.edt_email);
 
-        tv_fRes1=findViewById(R.id.tv_fRes1);
-        tv_fRes2=findViewById(R.id.tv_fRes2);
-        tv_fRes3=findViewById(R.id.tv_fRes3);
+        tv_fRes=findViewById(R.id.tv_fRes);
 
         btn_findId=findViewById(R.id.btn_findId);
 
@@ -86,13 +82,7 @@ public class FindId extends AppCompatActivity {
 
                         Log.v("resultValue",id+"/"+pw+"/"+name+"/"+nick+"/"+mail+"/"+serial);
 
-                        tv_fRes1.setText("아이디 : "+id);
-                        //setText(id);
-                       // tv_fRes3.setText(" 입니다");
-                        //Toast.makeText(getApplicationContext() , "회원님의 아이디는 위와 같습니다",Toast.LENGTH_SHORT).show();
-
-
-
+                        tv_fRes.setText("아이디 : "+id);
 
                     } catch (JSONException e) {
                         e.printStackTrace();

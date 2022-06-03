@@ -113,7 +113,7 @@
             android:textColorHint="@color/text_hint" />
 
         <EditText
-            android:id="@+id/edt_name"
+            android:id="@+id/edt_id"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"

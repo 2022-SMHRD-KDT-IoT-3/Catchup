@@ -118,7 +118,7 @@
                         app:srcCompat="@drawable/thermometer" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/tv_temprt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -149,7 +149,7 @@
                         app:srcCompat="@drawable/humidity" />
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/tv_humid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -188,7 +188,7 @@
                         app:srcCompat="@drawable/disease_top" />
 
                     <TextView
-                        android:id="@+id/textView17"
+                        android:id="@+id/tv_infected"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

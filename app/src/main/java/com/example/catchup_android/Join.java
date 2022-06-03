@@ -50,7 +50,7 @@ public class Join extends AppCompatActivity {
 
         edt_join_id=findViewById(R.id.edt_join_id);
         edt_join_pw=findViewById(R.id.edt_join_pw);
-        edt_name=findViewById(R.id.edt_name);
+        edt_name=findViewById(R.id.edt_id);
         edt_nick=findViewById(R.id.edt_nick);
         edt_email=findViewById(R.id.edt_email);
         edt_serial=findViewById(R.id.edt_serial);

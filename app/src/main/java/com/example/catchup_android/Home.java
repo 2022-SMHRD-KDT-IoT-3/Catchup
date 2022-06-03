@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class Home extends AppCompatActivity {
 
+    private Button btn_toMyfarm;
 
 
     @Override
@@ -17,6 +18,17 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        btn_toMyfarm=findViewById(R.id.btn_toMyfarm);
+
+        btn_toMyfarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MyFarm.class );
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 
