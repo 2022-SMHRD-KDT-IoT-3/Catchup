@@ -12,10 +12,14 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver">
 		</property>
-		<property name="jdbcUrl"
+<!-- 		<property name="jdbcUrl"
 			value="jdbc:mysql://localhost:3306/mysql"></property>
 			<property name="username" value="root"></property>
-			<property name="password" value="12345"></property>
+			<property name="password" value="12345"></property> -->
+			<property name="jdbcUrl"
+			value="jdbc:mysql://localhost:3306/catchup_db"></property>
+			<property name="username" value="catchup_user"></property>
+			<property name="password" value="1234"></property>
 	</bean>	
 		
 	<!-- 히카리 CP 설정(위에 히카리cp빈을 가져다씀) -->
