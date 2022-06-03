@@ -27,10 +27,10 @@ public class UserContloller {
 	public void login(UserVo vo, HttpServletResponse response) {
 		System.out.println("-login.do");
 		// Responsebody 대신 gson + out객체 사용
-		
-		//System.out.println("vo : "+vo);
+
+		// System.out.println("vo : "+vo);
 		UserVo info = mapper.loginSelect(vo);
-		System.out.println("[login] + "+ info);
+		System.out.println("[login] + " + info);
 		Gson gson = new Gson();
 		String value = gson.toJson(info);
 		PrintWriter out = null;
@@ -40,22 +40,21 @@ public class UserContloller {
 			e.printStackTrace();
 		}
 		out.print(value);
-		
-		
+
 	}
-	
+
 	// app/loginSelect.do를 요청했을 때 실행되는 메소드
-		@RequestMapping("/loginSelect.do")
-		public UserVo loginSelect(UserVo vo) {
-			
-			System.out.println("-loginSelect.do");
-			System.out.println(vo.toString());
-			UserVo info = mapper.loginSelect(vo);
+	@RequestMapping("/loginSelect.do")
+	public UserVo loginSelect(UserVo vo) {
 
-			System.out.println("loginSelect " + info); // info 세션정보가 출력된다
+		System.out.println("-loginSelect.do");
+		System.out.println(vo.toString());
+		UserVo info = mapper.loginSelect(vo);
 
-			return info;
-		}
+		System.out.println("loginSelect " + info); // info 세션정보가 출력된다
+
+		return info;
+	}
 
 	// app/join.do를 요청했을 때 실행되는 메소드
 	@RequestMapping("/join.do")
@@ -69,18 +68,16 @@ public class UserContloller {
 	public String joinInsert(UserVo vo) {
 		mapper.joinInsert(vo);
 		System.out.println("회원가입기능 요청");
-		
 
 		return "redirect:/login.do";
 	}
-	
 
 	// app/idCheck.do를 요청했을때 실행되는 메소드
 	@RequestMapping("/idCheck.do")
-	public void idCheck(String user_id,HttpServletResponse response) {
-		System.out.println("[중복확인 진입]"+ user_id);
+	public void idCheck(String user_id, HttpServletResponse response) {
+		System.out.println("[중복확인 진입]" + user_id);
 		UserVo vo = mapper.idCheck(user_id);
-		
+
 		Gson gson = new Gson();
 		String value = gson.toJson(vo);
 		PrintWriter out = null;
@@ -90,33 +87,67 @@ public class UserContloller {
 			e.printStackTrace();
 		}
 		out.print(value);
-		
-		
-		System.out.println("[중복확인 이탈]"+ vo);
-		
+
+		System.out.println("[중복확인 이탈]" + vo);
+
 	}
-	
+
 	// app/findId.do를 요청했을때 실행되는 메소드
-		@RequestMapping("/findId.do")
-		public void findId(UserVo vo,HttpServletResponse response) {
-			System.out.println("[findId 진입]"+vo);
-			UserVo data = mapper.findId(vo);
-			
-			System.out.println("data : "+data);
-			
-			Gson gson = new Gson();
-			String value = gson.toJson(data);
-			PrintWriter out = null;
-			try {
-				out = response.getWriter();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			out.print(value);
-			
-			//System.out.println("[findId이탈]"+ value);
-						
+	@RequestMapping("/findId.do")
+	public void findId(UserVo vo, HttpServletResponse response) {
+		System.out.println("[findId 진입]" + vo);
+		UserVo data = mapper.findId(vo);
+
+		System.out.println("data : " + data);
+
+		Gson gson = new Gson();
+		String value = gson.toJson(data);
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		out.print(value);
+	}
+
+	// app/findPw.do를 요청했을때 실행되는 메소드
+	@RequestMapping("/findPw.do")
+	public void findPw(UserVo vo, HttpServletResponse response) {
+		System.out.println("[findPw 진입]" + vo);
+		UserVo data = mapper.findPw(vo);
+
+		System.out.println("data : " + data);
+
+		Gson gson = new Gson();
+		String value = gson.toJson(data);
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		out.print(value);
+	}
+
+	// app/setPw.do를 요청했을때 실행되는 메소드
+	@RequestMapping("/setPw.do")
+	public void setPw(UserVo vo, HttpServletResponse response) {
+		System.out.println("[setPw 진입]" + vo);
+		UserVo data = mapper.setPw(vo);
+
+		System.out.println("data : " + data);
+
+		Gson gson = new Gson();
+		String value = gson.toJson(data);
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		out.print(value);
+	}
 
 	/*
 	 * // app/update.do를 요청했을 때 실행되는 메소드
@@ -140,14 +171,13 @@ public class UserContloller {
 	 * "redirect:/boardList.do"; }
 	 * 
 	 * // app/logout.do를 요청했을 때 실행되는 메소드
-	@RequestMapping("/logout.do")
-	public String logout(HttpSession session) {
-		System.out.println("-logout");
-
-		session.removeAttribute("info");
-
-		return "redirect:/login.do";
-	}
+	 * 
+	 * @RequestMapping("/logout.do") public String logout(HttpSession session) {
+	 * System.out.println("-logout");
+	 * 
+	 * session.removeAttribute("info");
+	 * 
+	 * return "redirect:/login.do"; }
 	 * 
 	 * 
 	 * //app/userList.do를 요청했을때 실행되는 메소드
@@ -162,7 +192,7 @@ public class UserContloller {
 	 * System.out.println(list.size()); return list ; }
 	 * 
 	 * 
-	
+	 * 
 	 */
 
 }

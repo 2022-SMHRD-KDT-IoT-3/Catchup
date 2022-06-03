@@ -22,7 +22,7 @@ public class DiaryVo {
     @NonNull
 	private String diary_content; //  다이어리 내용
     @NonNull
-	private Timestamp diary_dt; //  다이어리 날짜
+	private String diary_dt; //  다이어리 날짜
     @NonNull
 	private String diary_id; //  작성자 아이디
 	
