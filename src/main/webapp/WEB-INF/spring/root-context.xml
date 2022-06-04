@@ -3,36 +3,40 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
    http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"
-   xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring">
-	
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring">
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
+
 	<!-- 히카리 CP 빈 등록 --> <!-- 객체로 변형되어 올라감 -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver">
 		</property>
-<!-- 		<property name="jdbcUrl"
+
+		<property name="jdbcUrl"
 			value="jdbc:mysql://localhost:3306/mysql"></property>
-			<property name="username" value="root"></property>
-			<property name="password" value="12345"></property> -->
-			<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/catchup_db"></property>
-			<property name="username" value="catchup_user"></property>
-			<property name="password" value="1234"></property>
-	</bean>	
+		<property name="username" value="root"></property>
+		<property name="password" value="12345"></property>
 		
+		<!-- cgi
+		<property name="jdbcUrl" 
+		    value="jdbc:mysql://project-db-stu.ddns.net:3307/mysql"></property> 
+			<property name="username" value="chatchup"></property> 
+			<property name="password" value="1234"></property> -->
+	</bean>
+
 	<!-- 히카리 CP 설정(위에 히카리cp빈을 가져다씀) -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
 		destroy-method="close">
-		<constructor-arg ref="hikariConfig"/>
-		</bean>
-		
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+
 	<!-- 데이터베이스랑 연결을 시켜주는놈 (dataSource를 가져다씀) -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
-          <property name="dataSource" ref="dataSource" />
-      </bean>
-      
-	<mybatis-spring:scan base-package="kr.catchup.mapper"/> <!-- 여기서 스캔 해라 -->
-	
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<mybatis-spring:scan
+		base-package="kr.catchup.mapper" /> <!-- 여기서 스캔 해라 -->
+
 </beans>

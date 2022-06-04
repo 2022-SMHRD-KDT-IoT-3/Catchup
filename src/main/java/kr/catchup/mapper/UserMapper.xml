@@ -25,43 +25,5 @@
     <update id="setPw" parameterType="kr.catchup.mapper.UserVo" >
 		update t_user set user_pw=#{user_pw} where user_id=#{user_id}
 	</update>
-    
-    
-    
-   <!--  <select id="userList" resultType="kr.catchup.mapper.UserVO">
-		select * from t_user where user_id not in ('admin'); </select>  -->
-		<!-- 관리자 본인은 셀렉트를 할 필요가 없다 -->
-	
-    
-	<!--  
-	<update id="updateService" parameterType="kr.catchup.mapper.UserVO" >
-		update user set pw=#{pw}, nick=#{nick}, phone=#{phone} where id=#{id}
-	</update>
-	
-	 
-	
-	<select id="boardList" resultType="kr.smhrd.mapper.BoardVO">
-		select * from board order by indate desc;
-	</select>
-	<insert id="boardInsert" parameterType="kr.smhrd.mapper.BoardVO">
-		insert into board(title,contents,writer)
-		values(#{title},#{contents},#{writer})
-	</insert>
-	<select id="boardContents" parameterType="int" resultType="kr.smhrd.mapper.BoardVO">
-		select * from board where idx = #{idx}
-	</select>
-	
-	<update id="boardUpdate" parameterType="kr.smhrd.mapper.BoardVO">
-		update board set title= #{title}, contents=#{contents} where idx=#{idx}
-	</update>
-	
-	<delete id="boardDelete" parameterType="kr.smhrd.mapper.BoardVO">
-		delete from board where idx=#{idx}
-	</delete>
-	
-	<update id="count" parameterType="int" >
-		update board set count= count+1 where idx=#{idx}
-	</update> -->
-	
-		
+    		
 </mapper>
