@@ -34,7 +34,7 @@ public class MyFarm extends AppCompatActivity {
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
     private TextView tv_temprt,tv_humid,tv_infected;
-    private ImageView img_reservation;
+    private ImageView img_reservation, img_monitoring, img_calendar, img_diary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,10 @@ public class MyFarm extends AppCompatActivity {
         tv_humid=findViewById(R.id.tv_humid);
         tv_infected=findViewById(R.id.tv_infected);
         img_reservation = findViewById(R.id.img_reservation);
+        img_monitoring = findViewById(R.id.img_monitoring);
+        img_calendar = findViewById(R.id.img_calendar);
+        img_diary = findViewById(R.id.img_diary);
+
 
         img_reservation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +61,32 @@ public class MyFarm extends AppCompatActivity {
 
         /*tv_temprt.setText();
         tv_humid.setText();*/
+        img_monitoring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Monitoring.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        img_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DiaryMain.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        img_diary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DiaryList.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 
@@ -68,7 +98,7 @@ public class MyFarm extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/getEnv.do";
+        String url="http://222.102.104.159:8081/app/getEnv.do";
 
 
         // 요청시 필요한 문자열 객체
