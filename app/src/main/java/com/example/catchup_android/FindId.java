@@ -1,5 +1,6 @@
 package com.example.catchup_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +35,7 @@ public class FindId extends AppCompatActivity {
 
     private EditText edt_name,edt_email;
     private TextView tv_fRes;
-    private Button btn_findId;
+    private Button btn_findId, btn_toLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,18 @@ public class FindId extends AppCompatActivity {
         tv_fRes=findViewById(R.id.tv_fRes);
 
         btn_findId=findViewById(R.id.btn_findId);
+        btn_toLogin=findViewById(R.id.btn_toLogin);
+
+        btn_toLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Login2.class );
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
 
         btn_findId.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,18 +87,17 @@ public class FindId extends AppCompatActivity {
                     try {
                         JSONObject jsonObject=new JSONObject(response);
                         String id=jsonObject.getString("user_id");
-                        String pw=jsonObject.getString("user_pw");
                         String name=jsonObject.getString("user_name");
-                        String nick=jsonObject.getString("user_nick");
                         String mail=jsonObject.getString("user_mail");
-                        String serial=jsonObject.getString("user_serial");
 
-                        Log.v("resultValue",id+"/"+pw+"/"+name+"/"+nick+"/"+mail+"/"+serial);
+                        Log.v("resultValue",id+"/"+name+"/"+mail);
 
                         tv_fRes.setText("아이디 : "+id);
 
                     } catch (JSONException e) {
+                        Log.v("resultValue","[아이디 찾기실패]");
                         e.printStackTrace();
+                        tv_fRes.setText("");
                     }
 
 
