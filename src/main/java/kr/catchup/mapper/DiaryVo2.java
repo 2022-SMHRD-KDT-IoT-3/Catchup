@@ -1,8 +1,5 @@
 package kr.catchup.mapper;
 
-
-import java.sql.Timestamp;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,9 +10,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class DiaryVo {
-		
-    @NonNull
+public class DiaryVo2{
+
+	public DiaryVo2(String title, String content, String date, String id, int temp, int humid, int percent,
+			String pesti, int cnt) {
+		// TODO Auto-generated constructor stub
+	}
+	@NonNull
 	private int diary_seq; //  다이어리 순번
     @NonNull
 	private String diary_title; //  다이어리 제목
@@ -25,10 +26,9 @@ public class DiaryVo {
 	private String diary_dt; //  다이어리 날짜
     @NonNull
 	private String diary_id; //  작성자 아이디
-    private String diary_temp;
-    private String diary_humid;
-    private String diary_percent;
+    private int diary_temp;
+    private int diary_humid;
+    private int diary_percent;
     private String diary_pesti;
-    private String diary_cnt;
-	
+    private int diary_cnt;
 }

@@ -13,5 +13,7 @@ public interface ReservationMapper {
 	public void Reservation_add(ResVo vo);
 
 	public void Reservation_remove(ResVo vo);
+	
+	public void diary_write(DiaryVo2 vo2);
 
 }
