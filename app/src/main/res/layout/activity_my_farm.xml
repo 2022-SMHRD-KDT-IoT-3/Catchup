@@ -15,12 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/img_farm_back"
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-
             app:srcCompat="@drawable/left" />
 
         <TextView
@@ -299,7 +299,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/img_disease"
                             android:layout_width="match_parent"
                             android:layout_height="65dp"
                             android:layout_marginTop="10dp"
@@ -330,7 +330,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView10"
+                            android:id="@+id/img_calendar"
                             android:layout_width="match_parent"
                             android:layout_height="65dp"
                             android:layout_marginTop="10dp"
@@ -354,7 +354,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView9"
+                            android:id="@+id/img_monitoring"
                             android:layout_width="match_parent"
                             android:layout_height="65dp"
                             android:layout_marginTop="10dp"
@@ -385,7 +385,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/img_diary"
                             android:layout_width="match_parent"
                             android:layout_height="65dp"
                             android:layout_marginTop="10dp"
