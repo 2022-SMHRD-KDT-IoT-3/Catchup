@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 
 import kr.catchup.mapper.EvnrMapper;
 import kr.catchup.mapper.EvnrVo;
+import kr.catchup.mapper.MonitVo;
 
 @Controller
 public class EvnrController {
@@ -26,9 +27,10 @@ public class EvnrController {
 		System.out.println("-selectEnv.do");
 		// Responsebody 대신 gson + out객체 사용
 
-		// System.out.println("vo : "+vo);
+		System.out.println("vo : "+vo);
 
-		/*EvnrVo data = mapper.selectEnv(vo);
+		EvnrVo data = mapper.selectEnv(vo);
+		
 		System.out.println("[selectEnv] + " + data);
 		Gson gson = new Gson();
 		String value = gson.toJson(data);
@@ -39,7 +41,9 @@ public class EvnrController {
 			e.printStackTrace();
 		}
 		out.print(value);
-*/
 	}
+	
+	
+	
 
 }

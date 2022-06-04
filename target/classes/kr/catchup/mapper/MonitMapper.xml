@@ -7,48 +7,14 @@
 		values(#{monit_area},#{monit_done},#{monit_infected},#{user_id},#{res_seq})
 	</insert>
 	
-     
-    
-   <!--  <select id="userList" resultType="kr.catchup.mapper.UserVO">
-		select * from t_user where user_id not in ('admin'); </select>  -->
-		<!-- 관리자 본인은 셀렉트를 할 필요가 없다 -->
-	
-    
-	<!--  
-	<update id="updateService" parameterType="kr.catchup.mapper.UserVO" >
-		update user set pw=#{pw}, nick=#{nick}, phone=#{phone} where id=#{id}
-	</update>
-	<select id="loginSelect" parameterType="kr.catchup.mapper.UserVo" resultType="kr.catchup.mapper.UserVo">
-		select * from t_user where user_id= #{user_id} and user_pw=#{user_pw};
-	</select>
-   
-    <select id="idCheck" parameterType="String" resultType="kr.catchup.mapper.UserVo">
-		select * from t_user where user_id =#{user_id}; 
-    </select>
-	 
-	
-	<select id="boardList" resultType="kr.smhrd.mapper.BoardVO">
-		select * from board order by indate desc;
-	</select>
-	<insert id="boardInsert" parameterType="kr.smhrd.mapper.BoardVO">
-		insert into board(title,contents,writer)
-		values(#{title},#{contents},#{writer})
-	</insert>
-	<select id="boardContents" parameterType="int" resultType="kr.smhrd.mapper.BoardVO">
-		select * from board where idx = #{idx}
+    <select id="selectMonit" parameterType="kr.catchup.mapper.MonitVo" resultType="kr.catchup.mapper.MonitVo">
+		select * from t_monitor where user_id=#{user_id};
 	</select>
 	
-	<update id="boardUpdate" parameterType="kr.smhrd.mapper.BoardVO">
-		update board set title= #{title}, contents=#{contents} where idx=#{idx}
-	</update>
-	
-	<delete id="boardDelete" parameterType="kr.smhrd.mapper.BoardVO">
-		delete from board where idx=#{idx}
-	</delete>
-	
-	<update id="count" parameterType="int" >
-		update board set count= count+1 where idx=#{idx}
-	</update> -->
+    <select id="getInfected" parameterType="kr.catchup.mapper.MonitVo" resultType="String">
+		select count(monit_infected)/(select count(monit_done) from t_monitor where user_id=#{user_id} and monit_done=1 )*100 from t_monitor where user_id=#{user_id} and monit_done=1 and monit_infected=1 ;		
+	<!-- 서브쿼리를 활용.  -->
+	</select>
 	
 		
 </mapper>
