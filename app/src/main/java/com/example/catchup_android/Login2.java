@@ -106,7 +106,7 @@ public class Login2 extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/login.do";
+        String url="http://211.223.37.232:8081/app/login.do";
 
 
         // 요청시 필요한 문자열 객체
@@ -138,7 +138,7 @@ public class Login2 extends AppCompatActivity {
 
                          LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial);
 
-                        Intent intent = new Intent(getApplicationContext(),Home.class );
+                        Intent intent = new Intent(getApplicationContext(),MyFarm.class );
                         startActivity(intent);
                         finish();
 
