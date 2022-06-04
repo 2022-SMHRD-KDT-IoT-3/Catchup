@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,7 @@ public class MyFarm extends AppCompatActivity {
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
     private TextView tv_temprt,tv_humid,tv_infected;
-
+    private ImageView img_reservation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,16 @@ public class MyFarm extends AppCompatActivity {
         tv_temprt=findViewById(R.id.tv_temprt);
         tv_humid=findViewById(R.id.tv_humid);
         tv_infected=findViewById(R.id.tv_infected);
+        img_reservation = findViewById(R.id.img_reservation);
 
+        img_reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Reservation_list.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         sendRequest();
 
         /*tv_temprt.setText();
