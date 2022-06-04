@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class Home extends AppCompatActivity {
 
-    private Button btn_toMyfarm;
+    private Button btn_toMyfarm,btn_toMyInfo;
 
 
     @Override
@@ -20,11 +20,21 @@ public class Home extends AppCompatActivity {
 
 
         btn_toMyfarm=findViewById(R.id.btn_toMyfarm);
+        btn_toMyInfo=findViewById(R.id.btn_toMyInfo);
 
         btn_toMyfarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MyFarm.class );
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btn_toMyInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MyInfo.class );
                 startActivity(intent);
                 finish();
             }

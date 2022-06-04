@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Catchup_Android"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.catchup_android.MyInfo"
+            android:exported="false" />
+        <activity
             android:name="com.example.catchup_android.Reservation_list"
             android:exported="false" />
         <activity
@@ -19,16 +22,16 @@
             android:exported="false" />
         <activity
             android:name="com.example.catchup_android.DiaryWrite"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name="com.example.catchup_android.Reservation_add"
             android:exported="false" />
         <activity
             android:name=".FindId"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FindPw"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SetPw"
             android:exported="true" />
@@ -37,7 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".Monitoring"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Mypage"
             android:exported="true" />

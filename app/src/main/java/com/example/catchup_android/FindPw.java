@@ -79,8 +79,9 @@ public class FindPw extends AppCompatActivity {
                     String nick=jsonObject.getString("user_nick");
                     String mail=jsonObject.getString("user_mail");
                     String serial=jsonObject.getString("user_serial");
+                    String joindate=jsonObject.getString("user_joindate");
 
-                    LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial);
+                    LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial,joindate);
 
                     Intent intent = new Intent(getApplicationContext(),SetPw.class );
                     startActivity(intent);

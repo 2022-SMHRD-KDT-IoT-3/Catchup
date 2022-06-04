@@ -10,6 +10,7 @@ public class UserVo implements Serializable {
     private String nick;
     private String mail;
     private String serial;
+    private String joindate;
 
     @Override
     public String toString() {
@@ -20,20 +21,21 @@ public class UserVo implements Serializable {
                 ", nick='" + nick + '\'' +
                 ", mail='" + mail + '\'' +
                 ", serial='" + serial + '\'' +
+                ", joindate='" + joindate + '\'' +
                 '}';
     }
 
     public UserVo() {
-
     }
 
-    public UserVo(String id, String pw, String name, String nick, String mail, String serial) {
+    public UserVo(String id, String pw, String name, String nick, String mail, String serial, String joindate) {
         this.id = id;
         this.pw = pw;
         this.name = name;
         this.nick = nick;
         this.mail = mail;
         this.serial = serial;
+        this.joindate = joindate;
     }
 
     public String getId() {
@@ -83,4 +85,13 @@ public class UserVo implements Serializable {
     public void setSerial(String serial) {
         this.serial = serial;
     }
+
+    public String getJoindate() {
+        return joindate;
+    }
+
+    public void setJoindate(String joindate) {
+        this.joindate = joindate;
+    }
 }
+

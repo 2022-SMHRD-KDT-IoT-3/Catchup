@@ -132,13 +132,15 @@ public class Login2 extends AppCompatActivity {
                         String nick=jsonObject.getString("user_nick");
                         String mail=jsonObject.getString("user_mail");
                         String serial=jsonObject.getString("user_serial");
+                        String joindate=jsonObject.getString("user_joindate");
+
 
                         Log.v("resultValue",id+"/"+pw+"/"+name+"/"+nick+"/"+mail+"/"+serial);
                         //Log.v("resultValue",response);
 
                         Toast.makeText(getApplicationContext() , id + " 님 환영합니다",Toast.LENGTH_SHORT).show();
 
-                         LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial);
+                         LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial,joindate);
 
                         Intent intent = new Intent(getApplicationContext(),Home.class );
                         startActivity(intent);
