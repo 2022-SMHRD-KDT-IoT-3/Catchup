@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class MyFarm extends AppCompatActivity {
 
     private TextView tv_temprt,tv_humid,tv_infected,tv_realTime1,tv_realTime2;
     private Button btn_refresh;
+    private ImageView img_reservation, img_monitoring, img_calendar, img_diary;
 
     private TimeZone tz=TimeZone.getTimeZone("Asia/Seoul"); // 객체생성 + TimeZone에 표준시 설정
     private DateFormat dateFormat1= new SimpleDateFormat("yyyy'년' MM'월' dd'일'", Locale.KOREAN);
@@ -59,11 +61,17 @@ public class MyFarm extends AppCompatActivity {
 
         btn_refresh=findViewById(R.id.btn_refresh);
 
+        img_reservation = findViewById(R.id.img_reservation);
+        img_monitoring = findViewById(R.id.img_monitoring);
+        img_calendar = findViewById(R.id.img_calendar);
+        img_diary = findViewById(R.id.img_diary);
+
         tv_realTime1.setText(dateFormat1.format(date) );
         tv_realTime2.setText(dateFormat2.format(date) );
 
         //Log.v("resultValue","now : "+date);
 
+        // 농장정보 출력
         btn_refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +92,51 @@ public class MyFarm extends AppCompatActivity {
         sendRequest1();
         sendRequest2();
 
+        // 예약하기 버튼
+        img_reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Reservation_list.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        // 모니터링 버튼
+        img_monitoring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Monitoring.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // 캘린더 버튼
+        img_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DiaryMain.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // 다이어리 버튼
+        img_diary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DiaryList.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 
+    // 환경정보 가저오기
     public void sendRequest1(){
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
@@ -161,6 +211,7 @@ public class MyFarm extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    // 감염률 가져오기
     public void sendRequest2(){
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
@@ -229,5 +280,7 @@ public class MyFarm extends AppCompatActivity {
         stringRequest.setTag("myFarm");  // 구분자
         requestQueue.add(stringRequest);
     }
+
+
 
 }
