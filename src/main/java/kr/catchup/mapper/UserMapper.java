@@ -16,6 +16,9 @@ public interface UserMapper {
 
 	UserVo findPw(UserVo vo);
 
-	UserVo setPw(UserVo vo);
+	void setPw(UserVo vo);
 
+	void updateInfo(UserVo vo);
+
+	
 }

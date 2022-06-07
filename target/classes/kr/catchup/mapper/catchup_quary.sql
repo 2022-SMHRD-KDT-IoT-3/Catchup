@@ -11,15 +11,20 @@ select * from t_user;
 select * from t_monitor;
 select * from t_reservation;
 select * from t_environment;
+select * from t_farm;
 --select * from t_user where user_name="pbk" and user_mail="pbk@com";
 --select * from t_environment where user_id="pbk"
 
 insert into t_monitor (monit_area,monit_time ,monit_done,monit_infected,user_id )
-		values(#{monit_area},sysdata(),#{monit_done},#{monit_infected},#{user_id} )
+		values(#{monit_area},sysdate()),#{monit_done},#{monit_infected},#{user_id} )
 
 insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
 		values(res_pesticide(),#{res_rsvtime},#{monit_infected},#{user_id} )	
 
+-- select * from t_user;
+-- update t_user set user_name="pbk" and user_mail="pbk@com" and user_nick="bkbk" where user_id="pbk"
+-- update t_user set user_name="pbk7" where user_id="pbk7"
+		
 
 -- select count(*) from t_monitor where user_id=#{user_id} and monit_done=1 and monit_infected=1;
 -- select count(monit_infected) from t_monitor where user_id="pbk" and monit_done=1 and monit_infected=1;
@@ -198,8 +203,12 @@ ALTER TABLE t_diary
 --		values("pestTest","2022-05-28 11:14:41","12" );
 --insert into t_monitor (monit_area ,monit_done,monit_infected,user_id,res_seq )
 --		values("9","1","1","pbk",1);
+
 --insert into t_environment (env_temprt, env_humid,user_id)
---values("26","52","pbk");	
+--values("26","52","pbk");
+
+--insert into t_farm (farm_plant, farm_linenum,farm_areanum,user_id)
+--values(30,5,9,"pbk");	
 
 --insert into t_user 
 --		values("pbk","12","bk","bkbk","pbk@com","123456",now() );		

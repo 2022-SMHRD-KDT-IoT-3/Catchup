@@ -134,64 +134,21 @@ public class UserContloller {
 	@RequestMapping("/setPw.do")
 	public void setPw(UserVo vo, HttpServletResponse response) {
 		System.out.println("[setPw 진입]" + vo);
-		UserVo data = mapper.setPw(vo);
+		
+		mapper.setPw(vo);
+		//System.out.println("[setPw 이탈]" + vo);
 
-		System.out.println("data : " + data);
-
-		Gson gson = new Gson();
-		String value = gson.toJson(data);
-		PrintWriter out = null;
-		try {
-			out = response.getWriter();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		out.print(value);
 	}
 
-	/*
-	 * // app/update.do를 요청했을 때 실행되는 메소드
-	 * 
-	 * @RequestMapping("/update.do") public void update() {
-	 * System.out.println("-update"); }
-	 * 
-	 * // app/updateService.do를 요청했을 때 실행되는 메소드
-	 * 
-	 * @RequestMapping("/updateService.do") public String updateService(UserVO vo,
-	 * HttpSession session) { System.out.println("-updateService");
-	 * mapper.updateService(vo);
-	 * 
-	 * session.setAttribute("info", vo);
-	 * 
-	 * // MemberVO info = mapper.loginSelect(vo);
-	 * 
-	 * // System.out.println("정보수정 " + info); // info 세션정보가 출력된다
-	 * 
-	 * // if (info != null) { // session.setAttribute("info", info); // } return
-	 * "redirect:/boardList.do"; }
-	 * 
-	 * // app/logout.do를 요청했을 때 실행되는 메소드
-	 * 
-	 * @RequestMapping("/logout.do") public String logout(HttpSession session) {
-	 * System.out.println("-logout");
-	 * 
-	 * session.removeAttribute("info");
-	 * 
-	 * return "redirect:/login.do"; }
-	 * 
-	 * 
-	 * //app/userList.do를 요청했을때 실행되는 메소드
-	 * 
-	 * @RequestMapping("/userList.do") public @ResponseBody List<UserVO>
-	 * memberList() { System.out.println("멤버목록 비동기통신"); List<UserVO> list=
-	 * mapper.userList(); // 보내야할 정보는 없고, 받아와야할 정보들이 존재한다
-	 * 
-	 * for (int i = 0; i < list.size(); i++) {
-	 * System.out.println(list.get(i).toString()); // 리스트 확인 차원에서 tostring으로 찍어준다
-	 * 
-	 * System.out.println(list.size()); return list ; }
-	 * 
-	 * 
-	 * 
-	 */
+	// app/updateInfo.do를 요청했을때 실행되는 메소드
+	@RequestMapping("/updateInfo.do")
+	public void updateInfo(UserVo vo, HttpServletResponse response) {
+		System.out.println("[updateInfo 진입]" + vo);
+
+		mapper.updateInfo(vo);
+		
+		//System.out.println("[updateInfo 이탈]" + vo);
+
+	}
+
 }

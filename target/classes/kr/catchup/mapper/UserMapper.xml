@@ -22,8 +22,12 @@
 		select * from t_user where user_id= #{user_id} and user_mail=#{user_mail};
 	</select>
 	
-    <update id="setPw" parameterType="kr.catchup.mapper.UserVo" >
+    <update id="setPw" parameterType="kr.catchup.mapper.UserVo">
 		update t_user set user_pw=#{user_pw} where user_id=#{user_id}
+	</update>
+	
+    <update id="updateInfo" parameterType="kr.catchup.mapper.UserVo" >
+		update t_user set user_name=#{user_name}, user_mail=#{user_mail}, user_nick=#{user_nick} where user_id=#{user_id}
 	</update>
     		
 </mapper>
