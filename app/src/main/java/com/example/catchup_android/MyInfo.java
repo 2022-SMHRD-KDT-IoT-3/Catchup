@@ -2,6 +2,7 @@ package com.example.catchup_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,16 +21,8 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class MyInfo extends AppCompatActivity {
@@ -54,11 +47,11 @@ public class MyInfo extends AppCompatActivity {
         tv_id_info=findViewById(R.id.tv_id_info);
         tv_joindate=findViewById(R.id.tv_joindate);
 
-        edt_name_info=findViewById(R.id.edt_name_info);
+        edt_name_info=findViewById(R.id.tv_serial_fInfo);
         edt_mail_info=findViewById(R.id.edt_mail_info);
         edt_nick_info=findViewById(R.id.edt_nick_info);
 
-        btn_updateInfo=findViewById(R.id.btn_updateInfo);
+        btn_updateInfo=findViewById(R.id.btn_refresh_fInfo);
 
         String newJoindate=info.getJoindate().substring(0,10); // 날짜 포맷 변경이 잘 안되서 잘라내기로 처리함
 
@@ -73,12 +66,16 @@ public class MyInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendRequest();
+
+                Intent intent = new Intent(getApplicationContext(),Home.class );
+                startActivity(intent);
+                finish();
+
+
             }
         });
 
-
     }
-
 
     public void sendRequest(){
         // Request 객체 생성
@@ -92,7 +89,7 @@ public class MyInfo extends AppCompatActivity {
             // 응답데이터를 받아오는 곳 ///// 서버와 통신하면 마지막에 넘어오는 곳이다
             @Override
             public void onResponse(String response) {
-                Log.v("resultValue","[MyInfo 통신성공]");
+                Log.v("resultValue","[MyInfo 통신성공] "+response);
 
             }
         }, new Response.ErrorListener() {
@@ -126,7 +123,7 @@ public class MyInfo extends AppCompatActivity {
                 String mail=edt_mail_info.getText().toString();
                 String nick=edt_nick_info.getText().toString();
 
-                Log.v("resultValue",name+" / "+mail+" / "+nick);  // 찍히는 것 확인
+                Log.v("resultValue","[MyInfo측 전송] "+name+" / "+mail+" / "+nick);
 
                 params.put("user_name",name );
                 params.put("user_mail",mail );

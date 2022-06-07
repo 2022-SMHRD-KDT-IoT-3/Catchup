@@ -64,7 +64,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_realTime1"
+                    android:id="@+id/tv_mypage"
                     android:layout_width="159dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/henam"
@@ -124,7 +124,7 @@
                         app:srcCompat="@drawable/thermometer" />
 
                     <TextView
-                        android:id="@+id/tv_temprt"
+                        android:id="@+id/tv_toMyInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -155,7 +155,7 @@
                         app:srcCompat="@drawable/humidity" />
 
                     <TextView
-                        android:id="@+id/tv_humid"
+                        android:id="@+id/tv_toFarmInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -194,7 +194,7 @@
                         app:srcCompat="@drawable/disease_top" />
 
                     <TextView
-                        android:id="@+id/tv_infected"
+                        android:id="@+id/tv_toInquiry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -224,7 +224,7 @@
                         app:srcCompat="@drawable/pesticide" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/tv_toMyWriting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

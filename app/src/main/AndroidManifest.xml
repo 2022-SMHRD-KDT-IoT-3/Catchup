@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Catchup_Android"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.catchup_android.FarmInfo"
+            android:exported="false" />
+        <activity
             android:name="com.example.catchup_android.MyInfo"
             android:exported="false" />
         <activity
@@ -67,9 +70,8 @@
             android:exported="true" />
         <activity
             android:name=".DiaryMain"
-            android:exported="true" >
+            android:exported="true"></activity>
 
-        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

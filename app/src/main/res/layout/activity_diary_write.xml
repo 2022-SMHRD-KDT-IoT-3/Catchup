@@ -32,10 +32,10 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/tv_humid" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_toFarmInfo" />
 
     <TextView
-        android:id="@+id/tv_humid"
+        android:id="@+id/tv_toFarmInfo"
         android:layout_width="65dp"
         android:layout_height="35dp"
         android:layout_marginStart="15dp"

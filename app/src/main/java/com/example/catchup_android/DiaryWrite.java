@@ -43,7 +43,7 @@ public class DiaryWrite extends AppCompatActivity {
         setContentView(R.layout.activity_diary_write);
 
         tv_temp = findViewById(R.id.tv_temp);
-        tv_humid = findViewById(R.id.tv_humid);
+        tv_humid = findViewById(R.id.tv_toFarmInfo);
         tv_disease = findViewById(R.id.tv_disease);
         tv_pesti = findViewById(R.id.tv_pesti);
         tv_cnt = findViewById(R.id.tv_cnt);

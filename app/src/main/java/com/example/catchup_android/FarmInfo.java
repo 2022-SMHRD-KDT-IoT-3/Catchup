@@ -1,12 +1,15 @@
 package com.example.catchup_android;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -23,75 +26,69 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.TimeZone;
 
-public class MyFarm extends AppCompatActivity {
+public class FarmInfo extends AppCompatActivity {
 
     private RequestQueue requestQueue; // 서버에 요청을 하는 객체
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
-    private TextView tv_temprt,tv_humid,tv_infected,tv_realTime1,tv_realTime2;
-    private Button btn_refresh;
+    TextView tv_fInfo,tv_serial;
+    EditText edt_houseNum,edt_lineNum,edt_areaNum;
+    Button btn_refresh_fInfo,btn_updateFarmInfo;
 
-    private TimeZone tz=TimeZone.getTimeZone("Asia/Seoul"); // 객체생성 + TimeZone에 표준시 설정
-    private DateFormat dateFormat1= new SimpleDateFormat("yyyy'년' MM'월' dd'일'", Locale.KOREAN);
-    private DateFormat dateFormat2= new SimpleDateFormat("a hh:mm:ss", Locale.KOREAN);
-    private Date date = new Date();
+    UserVo info=LoginCheck.info;
 
-    UserVo info= LoginCheck.info;
+    String id=info.getId() , linenum,areanum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_farm);
+        setContentView(R.layout.activity_farm_info);
 
-        tv_temprt=findViewById(R.id.tv_toMyInfo);
-        tv_humid=findViewById(R.id.tv_toFarmInfo);
-        tv_infected=findViewById(R.id.tv_toInquiry);
-        tv_realTime1=findViewById(R.id.tv_mypage);
-        tv_realTime2=findViewById(R.id.tv_realTime2);
+        tv_fInfo=findViewById(R.id.tv_fInfo);
+        tv_serial=findViewById(R.id.tv_serial);
 
-        btn_refresh=findViewById(R.id.btn_refresh);
+        edt_houseNum=findViewById(R.id.edt_houseNum);
+        edt_lineNum=findViewById(R.id.edt_lineNum);
+        edt_areaNum=findViewById(R.id.edt_areaNum);
 
-        tv_realTime1.setText(dateFormat1.format(date) );
-        tv_realTime2.setText(dateFormat2.format(date) );
+        btn_refresh_fInfo=findViewById(R.id.btn_refresh_fInfo);
+        btn_updateFarmInfo=findViewById(R.id.btn_updateFarmInfo);
 
-        //Log.v("resultValue","now : "+date);
 
-        btn_refresh.setOnClickListener(new View.OnClickListener() {
+        tv_fInfo.setText(info.getId()+" 의 농장");
+        tv_serial.setText(info.getSerial());
+
+        sendRequest1();
+
+        btn_refresh_fInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Date date = new Date();
-
-                tv_realTime1.setText(dateFormat1.format(date) );
-                tv_realTime2.setText(dateFormat2.format(date) );
 
                 sendRequest1();
-                sendRequest2();
-                //Log.v("resultValue","[리프레시]" +);
-
-
-
             }
         });
 
-        sendRequest1();
-        sendRequest2();
+        btn_updateFarmInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendRequest2();
+            }
+        });
 
 
     }
 
+    // farm테이블 select
     public void sendRequest1(){
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/selectEnv.do";
+        String url="http://211.48.228.42:8081/app/selectFarmInfo.do";
+
 
 
         // 요청시 필요한 문자열 객체
@@ -99,28 +96,25 @@ public class MyFarm extends AppCompatActivity {
             // 응답데이터를 받아오는 곳 ///// 서버와 통신하면 마지막에 넘어오는 곳이다
             @Override
             public void onResponse(String response) {
-                Log.v("resultValue","[myFarm send1 통신성공]");
-                try {
-                JSONObject jsonObject=new JSONObject(response);
-                String seq=jsonObject.getString("env_seq");
-                String temprt=jsonObject.getString("env_temprt");
-                String humid=jsonObject.getString("env_humid");
-                String env_time=jsonObject.getString("env_time");
-                String id=jsonObject.getString("user_id");
+                Log.v("resultValue","[fInfo send1 성공] "+response);
+
+                    try {
+                        JSONObject jsonObject=new JSONObject(response);
+                        String plant=jsonObject.getString("farm_plant");
+                        String linenum=jsonObject.getString("farm_linenum");
+                        String areanum=jsonObject.getString("farm_areanum");
 
 
-                Log.v("resultValue",seq+" / "+temprt+" / "+humid+" / "+env_time+" / "+id);
+                        Log.v("resultValue","주수 / 라인 / 구역 "+plant+"/"+linenum+"/"+areanum);
 
+                        edt_lineNum.setText(linenum);
+                        edt_areaNum.setText(areanum);
 
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.v("resultValue","[fInfo send1 실패]");
 
-                tv_temprt.setText(temprt+" 도");
-                tv_humid.setText(humid+" %");
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.v("resultValue","[myFarm send1 통신오류]");
-                }
-
+                    }
 
             }
         }, new Response.ErrorListener() {
@@ -149,23 +143,23 @@ public class MyFarm extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-
-                String id=info.getId();
-                Log.v("resultValue",id);  // 찍히는 것 확인
+                
+                Log.v("resultValue","[fInfo send1 출발]");
                 params.put("user_id",id );
 
                 return params;
             }
         };
-        stringRequest.setTag("myFarm");  // 구분자
-        requestQueue.add(stringRequest);
+        stringRequest.setTag("fInfo");  ///// 이곳은 구분자다.
+        requestQueue.add(stringRequest);  ///// 이곳이 더 중요하다
     }
 
+    // farm테이블 updates
     public void sendRequest2(){
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/getInfected.do";
+        String url="http://211.48.228.42:8081/app/updateFarmInfo.do";
 
 
         // 요청시 필요한 문자열 객체
@@ -173,23 +167,9 @@ public class MyFarm extends AppCompatActivity {
             // 응답데이터를 받아오는 곳 ///// 서버와 통신하면 마지막에 넘어오는 곳이다
             @Override
             public void onResponse(String response) {
-                //Log.v("resultValue","[myFarm send2 통신성공]   "+response);
 
-
-                try {
-                    Log.v("resultValue","[myFarm send2 통신성공] "+response);
-
-                    String value= response; // response가 json이 아니라 단순한 문자열이기 때문에 직접 받는 것이 가능하다
-
-                    Log.v("resultValue","value : "+value );
-
-                   tv_infected.setText(value + " %");
-
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.v("resultValue","[myFarm send2 통신오류]  "+response );
-                }
+                //통신 성공
+                Log.v("resultValue","[FarmInfo 통신성공]");
 
             }
         }, new Response.ErrorListener() {
@@ -219,15 +199,20 @@ public class MyFarm extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
 
-                String id=info.getId();
-                Log.v("resultValue",id);  // 찍히는 것 확인
-                params.put("user_id",id );
+                String linenum=edt_lineNum.getText().toString();
+                String areanum=edt_areaNum.getText().toString();
+
+                Log.v("resultValue",linenum+" / "+areanum);  // 찍히는 것 확인
+
+                params.put("farm_linenum",linenum );
+                params.put("farm_areanum",areanum );
+
+                params.put("user_id",info.getId());
 
                 return params;
             }
         };
-        stringRequest.setTag("myFarm");  // 구분자
+        stringRequest.setTag("FarmInfo");  // 구분자
         requestQueue.add(stringRequest);
     }
-
 }

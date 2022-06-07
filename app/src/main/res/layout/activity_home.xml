@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="300dp"
         android:text="내 농장으로"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,9 +20,19 @@
         android:id="@+id/btn_toMyInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="308dp"
         android:text="MyInfo로"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_toMyfarm" />
+
+    <Button
+        android:id="@+id/btn_toMypage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="30dp"
+        android:text="to 마이페이지"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_toMyfarm" />
 </androidx.constraintlayout.widget.ConstraintLayout>

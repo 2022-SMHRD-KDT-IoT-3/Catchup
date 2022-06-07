@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,62 +27,62 @@ import java.util.Map;
 
 public class Mypage extends AppCompatActivity {
 
-    UserVo vo= new UserVo();
+    private TextView tv_mypage,tv_toMyInfo, tv_toFarmInfo,tv_toInquiry,tv_toMyWriting;
+    private Button btn_logout;
+
     UserVo info  =LoginCheck.info;
-
-    private Button btn_toUserEdit, btn_logout_myP, btn_toUserDelete, btn_toMonit;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        btn_toUserEdit=findViewById(R.id.btn_toUserEdit);
-        btn_logout_myP=findViewById(R.id.btn_logout_myP);
-        btn_toUserDelete=findViewById(R.id.btn_toUserDelete);
-        btn_toMonit=findViewById(R.id.btn_toMonit);
+        tv_mypage=findViewById(R.id.tv_mypage);
+        tv_toMyInfo=findViewById(R.id.tv_toMyInfo);
+        tv_toFarmInfo=findViewById(R.id.tv_toFarmInfo);
+        tv_toInquiry=findViewById(R.id.tv_toInquiry);
+        tv_toMyWriting=findViewById(R.id.tv_toMyWriting);
+        btn_logout=findViewById(R.id.btn_logout);
 
+        tv_mypage.setText(info.getId()+" 님 환영합니다  ");
 
-        //모니터링 임시
-        btn_toMonit.setOnClickListener(new View.OnClickListener() {
+        // 내 정보
+        tv_toMyInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(getApplicationContext(),Monitoring.class );
+                Intent intent = new Intent(getApplicationContext(),MyInfo.class );
                 startActivity(intent);
                 finish();
 
             }
         });
-
-        // 회원정보 수정 클릭
-        btn_toUserEdit.setOnClickListener(new View.OnClickListener() {
+        // 농장정보
+        tv_toFarmInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 정보수정 페이지로 이동
-                /*Intent intent = new Intent(getApplicationContext(),UserEdit.class );
+                Intent intent = new Intent(getApplicationContext(),FarmInfo.class );
                 startActivity(intent);
-                finish();*/
+                finish();
 
             }
         });
-
-        // 회원 탈퇴
-        btn_toUserDelete.setOnClickListener(new View.OnClickListener() {
+        //1:1문의
+        tv_toInquiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 탈퇴 페이지로 이동
-                /*Intent intent = new Intent(getApplicationContext(),UserDelete.class );
-                startActivity(intent);
-                finish();*/
 
             }
         });
+        // 내 글 보기
+        tv_toMyWriting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
 
         // 로그아웃
-        btn_logout_myP.setOnClickListener(new View.OnClickListener() {
+        btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 전역에서 로그아웃 가능 

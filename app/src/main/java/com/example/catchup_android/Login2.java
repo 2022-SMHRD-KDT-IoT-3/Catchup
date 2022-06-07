@@ -200,8 +200,6 @@ public class Login2 extends AppCompatActivity {
         requestQueue.add(stringRequest);  ///// 이곳이 더 중요하다
     }
 
-
-
 }
 
 
