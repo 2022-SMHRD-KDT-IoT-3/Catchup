@@ -1,5 +1,6 @@
 package com.example.catchup_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,7 +40,7 @@ public class MyFarm extends AppCompatActivity {
 
     private TextView tv_temprt,tv_humid,tv_infected,tv_realTime1,tv_realTime2;
     private Button btn_refresh;
-    private ImageView img_reservation, img_monitoring, img_calendar, img_diary;
+    private ImageView img_reservation, img_monitoring, img_calendar, img_diary, img_disease;
 
     private TimeZone tz=TimeZone.getTimeZone("Asia/Seoul"); // 객체생성 + TimeZone에 표준시 설정
     private DateFormat dateFormat1= new SimpleDateFormat("yyyy'년' MM'월' dd'일'", Locale.KOREAN);
@@ -65,6 +66,7 @@ public class MyFarm extends AppCompatActivity {
         img_monitoring = findViewById(R.id.img_monitoring);
         img_calendar = findViewById(R.id.img_calendar);
         img_diary = findViewById(R.id.img_diary);
+        img_disease = findViewById(R.id.img_disease);
 
         tv_realTime1.setText(dateFormat1.format(date) );
         tv_realTime2.setText(dateFormat2.format(date) );
@@ -128,6 +130,16 @@ public class MyFarm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), DiaryList.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // 전염도 확인 버튼
+        img_disease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Infectivity.class);
                 startActivity(intent);
                 finish();
             }
