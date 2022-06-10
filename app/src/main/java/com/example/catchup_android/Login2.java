@@ -107,8 +107,8 @@ public class Login2 extends AppCompatActivity {
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
 //        String url="http://211.48.228.42:8081/app/login.do"; // jm
-        //String url="http://211.223.37.232:8081/app/login.do";  // 팀장님
-        String url="http://222.102.104.159:8081/app/login.do";  // 재경
+        String url="http://211.223.37.232:8081/app/login.do";  // 팀장님
+        //String url="http://222.102.104.159:8081/app/login.do";  // 재경
         
 
 

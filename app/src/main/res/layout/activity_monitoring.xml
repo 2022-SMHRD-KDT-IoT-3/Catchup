@@ -45,17 +45,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="320dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
@@ -85,29 +74,26 @@
         android:layout_width="61dp"
         android:layout_height="78dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/imageView18"
         app:srcCompat="@drawable/left_manipulate" />
 
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="61dp"
         android:layout_height="78dp"
-        android:layout_marginTop="80dp"
         android:layout_marginEnd="92dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/imageView18"
         app:srcCompat="@drawable/right_manipulate" />
 
     <ImageView
         android:id="@+id/imageView18"
         android:layout_width="101dp"
         android:layout_height="75dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/mWebView"
         app:srcCompat="@drawable/up" />
 
     <ImageView
@@ -118,5 +104,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView21"
         app:srcCompat="@drawable/down" />
+
+    <WebView
+        android:id="@+id/mWebView"
+        android:layout_width="409dp"
+        android:layout_height="287dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
