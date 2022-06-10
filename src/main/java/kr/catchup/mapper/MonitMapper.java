@@ -14,6 +14,8 @@ public interface MonitMapper {
 
 	String getInfected(MonitVo vo);
 
+	List<MonitVo> Infectivity(MonitVo vo);
+
 	//String getInfected(MonitVo vo);
 
 }

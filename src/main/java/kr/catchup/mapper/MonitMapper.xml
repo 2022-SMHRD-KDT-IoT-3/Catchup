@@ -16,5 +16,11 @@
 	<!-- 서브쿼리를 활용.  -->
 	</select>
 	
+    <select id="Infectivity" parameterType="kr.catchup.mapper.MonitVo" resultType="kr.catchup.mapper.MonitVo">
+        select monit_area, monit_infected from t_monitor
+        where user_id = #{user_id}
+		and DATE_FORMAT(#{monit_time},'%y/%M/%D') = DATE_FORMAT(monit_time,'%y/%M/%D')
+    </select>
+	
 		
 </mapper>
