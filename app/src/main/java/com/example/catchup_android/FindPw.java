@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class FindPw extends AppCompatActivity {
     private RequestQueue requestQueue; // 서버에 요청을 하는 객체
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
+    private ImageView img_back_fPw;
     private EditText edt_id, edt_email;
     private Button btn_toSetPw;
 
@@ -41,10 +43,21 @@ public class FindPw extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_pw);
 
+        img_back_fPw=findViewById(R.id.img_farm_back);
+
         edt_id=findViewById(R.id.edt_id);
         edt_email=findViewById(R.id.edt_email);
 
         btn_toSetPw=findViewById(R.id.btn_toSetPw);
+
+        img_back_fPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Login2.class );
+                startActivity(intent);
+                finish();
+            }
+        });
 
         btn_toSetPw.setOnClickListener(new View.OnClickListener() {
             @Override

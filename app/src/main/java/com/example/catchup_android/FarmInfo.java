@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,9 +35,10 @@ public class FarmInfo extends AppCompatActivity {
     private RequestQueue requestQueue; // 서버에 요청을 하는 객체
     private StringRequest stringRequest; // 요청 시 필요한 문자열
 
-    TextView tv_fInfo,tv_serial;
-    EditText edt_houseNum,edt_lineNum,edt_areaNum;
-    Button btn_refresh_fInfo,btn_updateFarmInfo;
+    private ImageView img_back_fInfo;
+    private TextView tv_fInfo,tv_serial,tv_houseNum,tv_areaNum;
+    private EditText edt_lineNum;
+    private Button btn_updateFarmInfo;
 
     UserVo info=LoginCheck.info;
 
@@ -47,14 +49,15 @@ public class FarmInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farm_info);
 
+        img_back_fInfo=findViewById(R.id.img_back_fInfo);
+
         tv_fInfo=findViewById(R.id.tv_fInfo);
         tv_serial=findViewById(R.id.tv_serial);
+        tv_houseNum=findViewById(R.id.tv_houseNum);
+        tv_areaNum=findViewById(R.id.tv_areaNum);
 
-        edt_houseNum=findViewById(R.id.edt_houseNum);
         edt_lineNum=findViewById(R.id.edt_lineNum);
-        edt_areaNum=findViewById(R.id.edt_areaNum);
 
-        btn_refresh_fInfo=findViewById(R.id.btn_refresh_fInfo);
         btn_updateFarmInfo=findViewById(R.id.btn_updateFarmInfo);
 
 
@@ -63,19 +66,25 @@ public class FarmInfo extends AppCompatActivity {
 
         sendRequest1();
 
-        btn_refresh_fInfo.setOnClickListener(new View.OnClickListener() {
+        //뒤로가기
+        img_back_fInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Mypage.class );
+                startActivity(intent);
+                finish();
 
-                sendRequest1();
             }
         });
+
 
         btn_updateFarmInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 sendRequest2();
+                Toast.makeText(getApplicationContext() , "수정 완료",Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -108,7 +117,7 @@ public class FarmInfo extends AppCompatActivity {
                         Log.v("resultValue","주수 / 라인 / 구역 "+plant+"/"+linenum+"/"+areanum);
 
                         edt_lineNum.setText(linenum);
-                        edt_areaNum.setText(areanum);
+                        tv_areaNum.setText(areanum);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -171,6 +180,7 @@ public class FarmInfo extends AppCompatActivity {
                 //통신 성공
                 Log.v("resultValue","[FarmInfo 통신성공]");
 
+
             }
         }, new Response.ErrorListener() {
             // 서버와의 연동 에러시 출력
@@ -200,14 +210,17 @@ public class FarmInfo extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 String linenum=edt_lineNum.getText().toString();
-                String areanum=edt_areaNum.getText().toString();
+                //String areanum=tv_areaNum_areaNum.getText().toString();
 
-                Log.v("resultValue",linenum+" / "+areanum);  // 찍히는 것 확인
+               // Log.v("resultValue","[fInfo send2 출발] "+linenum+" / "+areanum);  // 찍히는 것 확인
+                Log.v("resultValue","[fInfo send2 출발 / 라인수] "+linenum);  // 찍히는 것 확인
+
 
                 params.put("farm_linenum",linenum );
-                params.put("farm_areanum",areanum );
+               // params.put("farm_areanum",areanum );
 
                 params.put("user_id",info.getId());
+
 
                 return params;
             }

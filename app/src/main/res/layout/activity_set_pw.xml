@@ -7,7 +7,7 @@
     tools:context=".SetPw">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/li_back_fPw"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/li_back_fPw" />
 
     <TextView
         android:id="@+id/tv_pwCheck"

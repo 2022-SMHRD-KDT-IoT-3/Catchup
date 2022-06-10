@@ -6,7 +6,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,6 +44,7 @@ public class FindId extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
+
 
         edt_name=findViewById(R.id.edt_id);
         edt_email=findViewById(R.id.edt_email);
@@ -98,6 +102,8 @@ public class FindId extends AppCompatActivity {
                         Log.v("resultValue","[아이디 찾기실패]");
                         e.printStackTrace();
                         tv_fRes.setText("");
+                        Toast.makeText(getApplicationContext() , "아이디 찾기 실패",Toast.LENGTH_SHORT).show();
+
                     }
 
 
