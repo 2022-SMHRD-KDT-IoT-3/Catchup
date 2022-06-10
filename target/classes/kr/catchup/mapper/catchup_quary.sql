@@ -11,16 +11,32 @@ select * from t_user;
 select * from t_monitor;
 select * from t_reservation;
 select * from t_environment;
-select * from t_user where user_name="pbk" and user_mail="pbk@com";
-
+select * from t_farm;
+--select * from t_user where user_name="pbk" and user_mail="pbk@com";
+--select * from t_environment where user_id="pbk"
 
 insert into t_monitor (monit_area,monit_time ,monit_done,monit_infected,user_id )
-		values(#{monit_area},sysdata(),#{monit_done},#{monit_infected},#{user_id} )
+		values(#{monit_area},sysdate()),#{monit_done},#{monit_infected},#{user_id} )
 
 insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
 		values(res_pesticide(),#{res_rsvtime},#{monit_infected},#{user_id} )	
 
-	
+-- select * from t_user;
+-- update t_user set user_name="pbk" and user_mail="pbk@com" and user_nick="bkbk" where user_id="pbk"
+-- update t_user set user_name="pbk7" where user_id="pbk7"
+		
+
+-- select count(*) from t_monitor where user_id=#{user_id} and monit_done=1 and monit_infected=1;
+-- select count(monit_infected) from t_monitor where user_id="pbk" and monit_done=1 and monit_infected=1;
+
+		
+--select count(monit_infected)/(select count(monit_done) from t_monitor where user_id="pbk" and monit_done=1 and monit_time=curdate() )*100 from t_monitor where user_id="pbk" and monit_done=1 and monit_infected=1 and monit_time=curdate();		
+
+-- select count(monit_infected)/(select count(monit_done) from t_monitor where user_id="pbk" and monit_done=1  )*100 from t_monitor where user_id="pbk" and monit_done=1 and monit_infected=1;
+
+
+select curdate()
+
 -- t_user Table Create SQL
 CREATE TABLE t_user
 (
@@ -160,11 +176,16 @@ ALTER TABLE t_reply
 -- t_diary Table Create SQL
 CREATE TABLE t_diary
 (
-    `diary_seq`      INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '다이어리 순번', 
-    `diary_title`    VARCHAR(200)     NOT NULL    COMMENT '다이어리 제목', 
-    `diary_content`  VARCHAR(4000)     NOT NULL    COMMENT '다이어리 내용', 
-    `diary_dt`       DATETIME     NOT NULL    COMMENT '다이어리 날짜', 
-    `diary_id`       VARCHAR(30)     NOT NULL    COMMENT '작성자 아이디', 
+   `diary_seq`      INT UNSIGNED      NOT NULL    AUTO_INCREMENT COMMENT '다이어리 순번', 
+    `diary_title`    VARCHAR(45)       NOT NULL    COMMENT '다이어리 제목', 
+    `diary_content`  VARCHAR(45)       NOT NULL    COMMENT '다이어리 내용', 
+    `diary_dt`       VARCHAR(45)       NOT NULL    COMMENT '다이어리 날짜', 
+    `diary_temp`     NUMERIC(18, 1)    NOT NULL    COMMENT '다이어리 온도', 
+    `diary_humid`    NUMERIC(18, 1)    NOT NULL    COMMENT '다이어리 습도', 
+    `diary_percent`  NUMERIC(18, 1)    NOT NULL    COMMENT '다이어리 전염도', 
+    `diary_pesti`    VARCHAR(50)       NOT NULL    COMMENT '다이어리 사용 약품', 
+    `diary_cnt`      NUMERIC(18, 1)    NOT NULL    COMMENT '다이어리 방제횟수', 
+    `diary_id`       VARCHAR(30)       NOT NULL    COMMENT '작성자 아이디', 
      PRIMARY KEY (diary_seq)
 );
 
@@ -176,12 +197,18 @@ ALTER TABLE t_diary
         
 
 -- 테스트데이터		
-insert into t_user 
-		values("12","12","12","12","12","12345",now() );		
-insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
-		values("pestTest","2022-05-28 11:14:41","12" );
-insert into t_monitor (monit_area ,monit_done,monit_infected,user_id,res_seq )
-		values("1","1","1","12",1);	
+--insert into t_user 
+--		values("12","12","12","12","12","12345",now() );		
+--insert into t_reservation (res_pesticide ,res_rsvtime,user_id )
+--		values("pestTest","2022-05-28 11:14:41","12" );
+--insert into t_monitor (monit_area ,monit_done,monit_infected,user_id,res_seq )
+--		values("9","1","1","pbk",1);
 
-insert into t_user 
-		values("pbk","12","bk","bkbk","pbk@com","123456",now() );		
+--insert into t_environment (env_temprt, env_humid,user_id)
+--values("26","52","pbk");
+
+--insert into t_farm (farm_plant, farm_linenum,farm_areanum,user_id)
+--values(30,5,9,"pbk");	
+
+--insert into t_user 
+--		values("pbk","12","bk","bkbk","pbk@com","123456",now() );		

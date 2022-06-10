@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.catchup.mapper.FarmMapper">
+    
+    <select id="selectFarmInfo" parameterType="kr.catchup.mapper.FarmVo" resultType="kr.catchup.mapper.FarmVo">
+		select * from t_farm where user_id= #{user_id}; 
+	</select>
+	
+    <update id="updateFarmInfo" parameterType="kr.catchup.mapper.FarmVo">
+		update t_farm set farm_linenum=#{farm_linenum}, farm_areanum=#{farm_areanum} where user_id=#{user_id}
+        <!-- update t_farm set farm_plant=30,farm_linenum=#{farm_linenum}, farm_areanum=#{farm_areanum} where user_id=#{user_id} --> 
+	</update>
+    		
+</mapper>
