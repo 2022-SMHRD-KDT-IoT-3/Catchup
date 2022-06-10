@@ -51,7 +51,7 @@ public class MyInfo extends AppCompatActivity {
         edt_mail_info=findViewById(R.id.edt_mail_info);
         edt_nick_info=findViewById(R.id.edt_nick_info);
 
-        btn_updateInfo=findViewById(R.id.btn_refresh_fInfo);
+        btn_updateInfo=findViewById(R.id.btn_toMypage_fInfo);
 
         String newJoindate=info.getJoindate().substring(0,10); // 날짜 포맷 변경이 잘 안되서 잘라내기로 처리함
 

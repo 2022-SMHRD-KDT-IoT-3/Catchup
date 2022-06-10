@@ -92,7 +92,7 @@
                         android:layout_height="70dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/id" />
+                        app:srcCompat="@drawable/myinfo" />
 
                     <TextView
                         android:id="@+id/tv_toMyInfo"
@@ -123,7 +123,7 @@
                         android:layout_height="70dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/farmer" />
+                        app:srcCompat="@drawable/farm" />
 
                     <TextView
                         android:id="@+id/tv_toFarmInfo"
@@ -162,7 +162,7 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        app:srcCompat="@android:drawable/ic_dialog_email" />
+                        app:srcCompat="@drawable/personal" />
 
                     <TextView
                         android:id="@+id/tv_toInquiry"
@@ -192,7 +192,7 @@
                         android:layout_height="70dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        app:srcCompat="@android:drawable/ic_menu_edit" />
+                        app:srcCompat="@drawable/written" />
 
                     <TextView
                         android:id="@+id/tv_toMyWriting"
@@ -214,58 +214,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="20sp">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"></LinearLayout>
-
-                <Button
-                    android:id="@+id/btn_logout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/henam"
-                    android:gravity="center"
-                    android:text="로그 아웃" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"></LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"></LinearLayout>
+            android:layout_height="60sp"
+            android:fontFamily="@font/henam"
+            android:gravity="center"
+            android:text="로그아웃"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

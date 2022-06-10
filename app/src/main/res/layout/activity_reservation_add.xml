@@ -7,7 +7,7 @@
     tools:context=".Reservation_add">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/li_back_fPw"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:text="방제시간"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/li_back_fPw" />
 
     <TextView
         android:id="@+id/textView20"

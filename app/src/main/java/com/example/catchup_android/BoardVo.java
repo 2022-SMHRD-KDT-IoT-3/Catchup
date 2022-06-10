@@ -1,11 +1,13 @@
 package com.example.catchup_android;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.Serializable;
 
 public class BoardVo implements Serializable {
 
     private int board_seq;
-    private char board_type;
+    private String board_type;
     private String board_title;
     private String board_time;
     private String board_content;
@@ -30,7 +32,7 @@ public class BoardVo implements Serializable {
     public BoardVo() {
     }
 
-    public BoardVo(int board_seq, char board_type, String board_title, String board_time, String board_content, int board_cnt, int board_commcnt, String user_id) {
+    public BoardVo(int board_seq, String board_type, String board_title, String board_time, String board_content, int board_cnt, int board_commcnt, String user_id) {
         this.board_seq = board_seq;
         this.board_type = board_type;
         this.board_title = board_title;
@@ -49,11 +51,11 @@ public class BoardVo implements Serializable {
         this.board_seq = board_seq;
     }
 
-    public char getBoard_type() {
+    public String getBoard_type() {
         return board_type;
     }
 
-    public void setBoard_type(char board_type) {
+    public void setBoard_type(String board_type) {
         this.board_type = board_type;
     }
 

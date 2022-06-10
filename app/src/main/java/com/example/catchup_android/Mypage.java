@@ -27,30 +27,30 @@ import java.util.Map;
 
 public class Mypage extends AppCompatActivity {
 
-    private TextView tv_mypage,tv_toMyInfo, tv_toFarmInfo,tv_toInquiry,tv_toMyWriting;
+    private TextView tv_mypage, tv_toMyInfo, tv_toFarmInfo, tv_toInquiry, tv_toMyWriting;
     private Button btn_logout;
 
-    UserVo info  =LoginCheck.info;
+    UserVo info = LoginCheck.info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        tv_mypage=findViewById(R.id.tv_mypage);
-        tv_toMyInfo=findViewById(R.id.tv_toMyInfo);
-        tv_toFarmInfo=findViewById(R.id.tv_toFarmInfo);
-        tv_toInquiry=findViewById(R.id.tv_toInquiry);
-        tv_toMyWriting=findViewById(R.id.tv_toMyWriting);
-        btn_logout=findViewById(R.id.btn_logout);
+        tv_mypage = findViewById(R.id.tv_mypage);
+        tv_toMyInfo = findViewById(R.id.tv_toMyInfo);
+        tv_toFarmInfo = findViewById(R.id.tv_toFarmInfo);
+        tv_toInquiry = findViewById(R.id.tv_toInquiry);
+        tv_toMyWriting = findViewById(R.id.tv_toMyWriting);
+        btn_logout = findViewById(R.id.btn_logout);
 
-        tv_mypage.setText(info.getId()+" 님 환영합니다  ");
+        tv_mypage.setText(info.getId() + " 님 환영합니다  ");
 
         // 내 정보
         tv_toMyInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MyInfo.class );
+                Intent intent = new Intent(getApplicationContext(), MyInfo.class);
                 startActivity(intent);
                 finish();
 
@@ -60,7 +60,7 @@ public class Mypage extends AppCompatActivity {
         tv_toFarmInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),FarmInfo.class );
+                Intent intent = new Intent(getApplicationContext(), FarmInfo.class);
                 startActivity(intent);
                 finish();
 
@@ -77,6 +77,9 @@ public class Mypage extends AppCompatActivity {
         tv_toMyWriting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Postlist.class);
+                startActivity(intent);
+                finish();
 
             }
         });
@@ -88,11 +91,11 @@ public class Mypage extends AppCompatActivity {
                 // 전역에서 로그아웃 가능 
                 LoginCheck.logout();
                 // context 문제때문에 각각 페이지에서 이하를 구현
-                Intent intent = new Intent(getApplicationContext(),Login2.class );
+                Intent intent = new Intent(getApplicationContext(), Login2.class);
                 startActivity(intent);
                 finish();
 
-                Toast.makeText(getApplicationContext() , "로그아웃 완료",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "로그아웃 완료", Toast.LENGTH_SHORT).show();
 
             }
         });

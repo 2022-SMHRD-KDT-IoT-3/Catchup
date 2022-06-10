@@ -7,17 +7,12 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-        </LinearLayout>
+        android:layout_width="419dp"
+        android:layout_height="506dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:id="@+id/imageView20"
@@ -25,7 +20,7 @@
             android:layout_height="73dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/farmer" />
+            app:srcCompat="@drawable/myinfo" />
 
         <TextView
             android:id="@+id/tv_id_info"
@@ -146,7 +141,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/btn_refresh_fInfo"
+            android:id="@+id/btn_toMypage_fInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

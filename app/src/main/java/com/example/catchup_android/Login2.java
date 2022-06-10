@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,7 @@ public class Login2 extends AppCompatActivity {
 
         Log.v("activity","loginActivity");
 
+
         edt_join_id=findViewById(R.id.edt_join_id);
         edt_pw=findViewById(R.id.edt_pw);
 
@@ -54,7 +56,6 @@ public class Login2 extends AppCompatActivity {
 
         tv_toFindId=findViewById(R.id.tv_toFindId);
         tv_toFindPw=findViewById(R.id.tv_toFindPw);
-
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,7 +143,7 @@ public class Login2 extends AppCompatActivity {
 
                          LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial,joindate);
 
-                        Intent intent = new Intent(getApplicationContext(),MyFarm.class );
+                        Intent intent = new Intent(getApplicationContext(),Home.class );
                         startActivity(intent);
                         finish();
 
