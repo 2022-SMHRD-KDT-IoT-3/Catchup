@@ -1,7 +1,5 @@
 package com.example.catchup_android;
 
-import androidx.annotation.NonNull;
-
 public class ReservationVO {
 
     private String rsvtime;
@@ -11,6 +9,9 @@ public class ReservationVO {
 
     public ReservationVO(){
 
+    }
+
+    public ReservationVO(String reserve_pesti) {
     }
 
     @Override

@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class DiaryAdapter extends BaseAdapter {
@@ -21,17 +24,26 @@ public class DiaryAdapter extends BaseAdapter {
         items.add(vo);
     }
 
+    //    public void addItem(String diary_title, String diary_dt, String diary_temp, String diary_humid, String diary_percent, String diary_cnt, String diary_pesti) {
+//        DiaryVO vo = new DiaryVO(diary_title,diary_dt,diary_temp,diary_humid,diary_percent,diary_cnt,diary_pesti);
+//        items.add(vo);
+//    }
+    public void addItem1(String diary_title, String diary_content, String diary_dt, int diary_temp, int diary_humid, int diary_percent, int diary_cnt, String diary_pesti) {
+        DiaryVO vo = new DiaryVO(diary_title,diary_content,diary_dt,diary_temp,diary_humid,diary_percent,diary_cnt,diary_pesti);
+        items.add(vo);
+    }
+
     /*public void showItem(String diary_title, String diary_content, String diary_dt){
         DiaryVO vo = new DiaryVO(diary_title, diary_content, diary_dt);
         items.add(vo);
     }*/
 
-//    public void addCalendarItem(String diary_title, String diary_dt, String diary_content, String diary_id, int env_temp, int env_humid,int monit_percent, int monit_cnt, String reserve_pesti){
-//        DiaryVO vo = new DiaryVO(diary_title, diary_content, diary_dt, diary_id);
-//        EnvironmentVO env_vo = new EnvironmentVO(env_temp, env_humid);
-//        MonitoringVO moni_vo = new MonitoringVO(monit_percent, monit_cnt);
-//        ReservationVO reserve_vo = new ReservationVO(pesticide);
-//    }
+    public void addCalendarItem(String diary_title, String diary_dt, String diary_content, String diary_id, int env_temp, int env_humid,int monit_percent, int monit_cnt, String reserve_pesti){
+        DiaryVO vo = new DiaryVO(diary_title, diary_content, diary_dt, diary_id);
+        EnvironmentVO env_vo = new EnvironmentVO(env_temp, env_humid);
+        MonitoringVO moni_vo = new MonitoringVO(monit_percent, monit_cnt);
+        ReservationVO reserve_vo = new ReservationVO(reserve_pesti);
+    }
 
     @Override
     public int getCount() {
@@ -92,18 +104,20 @@ public class DiaryAdapter extends BaseAdapter {
         TextView diary_cnt = view.findViewById(R.id.diary_cnt);
         TextView diary_pesti = view.findViewById(R.id.diary_pesti);
 
-        EnvironmentVO env_vo = env_items.get(i);
-        MonitoringVO moni_vo = moni_items.get(i);
-        ReservationVO reserv_vo = reserve_items.get(i);
+//        EnvironmentVO env_vo = env_items.get(i);
+//        MonitoringVO moni_vo = moni_items.get(i);
+//        ReservationVO reserv_vo = reserve_items.get(i);
 
         diary_title.setText(vo.getDiary_title());
         diary_date.setText(vo.getDiary_dt());
-        diary_temp.setText(env_vo.getEnvr_temp());
-        diary_humid.setText(env_vo.getEnvr_humid());
-        diary_disease.setText(moni_vo.getMonit_percent());
-        diary_cnt.setText(moni_vo.getMonit_cnt());
-        diary_pesti.setText(reserv_vo.getPesticide());
+        diary_temp.setText(vo.getDiary_temp());
+        diary_humid.setText(vo.getDiary_humid());
+        diary_disease.setText(vo.getDiary_percent());
+        diary_cnt.setText(vo.getDiary_cnt());
+        diary_pesti.setText(vo.getDiary_pesti());
 
         return view;
     }
+
+
 }

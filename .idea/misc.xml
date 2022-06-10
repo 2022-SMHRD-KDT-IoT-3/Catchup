@@ -39,17 +39,19 @@
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/drawable/layout_border.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/drawable/menu_border.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/drawable/more.xml" value="0.1" />
-        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_contents.xml" value="0.18" />
-        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_list.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_contents.xml" value="0.25" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_list.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_main.xml" value="0.16510416666666666" />
-        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_write.xml" value="0.22" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_diary_write.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_find_id.xml" value="0.25" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_find_pw.xml" value="0.29347826086956524" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_infectivity.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_login2.xml" value="0.1" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_monitoring.xml" value="0.33" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_my_farm.xml" value="0.25" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_mypage.xml" value="0.29635416666666664" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_reservation_add.xml" value="0.3359375" />
+<<<<<<< HEAD
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/activity_reservation_list.xml" value="0.5" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/diary_list.xml" value="0.15729166666666666" />
         <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/reservation_layout.xml" value="0.18" />
@@ -81,6 +83,10 @@
         <entry key="..\:/Users/smhrd/git/Catchup_androMine/app/src/main/res/layout/fragment_date_picker.xml" value="0.67" />
         <entry key="..\:/Users/smhrd/git/Catchup_androMine/app/src/main/res/layout/reservation_layout.xml" value="0.22" />
         <entry key="..\:/Users/smhrd/git/Catchup_androMine/app/src/main/res/menu/toplogo.xml" value="0.1703125" />
+=======
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/layout/diary_list.xml" value="0.1" />
+        <entry key="..\:/Users/smhrd/AndroidStudioProjects/Catchup_Git/app/src/main/res/menu/bottom_menu.xml" value="0.13177083333333334" />
+>>>>>>> android
       </map>
     </option>
   </component>

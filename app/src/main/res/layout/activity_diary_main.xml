@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/henam"
             android:gravity="left"
-            android:text="   방제 다이어리"
+            android:text="   방제 달력"
             android:textSize="30sp" />
 
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "test">
+        <item>A동</item>
+        <item>B동</item>
+        <item>C동</item>
+    </string-array>
+
+</resources>
