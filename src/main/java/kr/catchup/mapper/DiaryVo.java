@@ -25,5 +25,10 @@ public class DiaryVo {
 	private String diary_dt; //  다이어리 날짜
     @NonNull
 	private String diary_id; //  작성자 아이디
+    private String diary_temp;
+    private String diary_humid;
+    private String diary_percent;
+    private String diary_pesti;
+    private String diary_cnt;
 	
 }

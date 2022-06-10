@@ -19,4 +19,27 @@
          delete from t_reservation where res_seq = #{res_seq}
      </delete>
     
+     <insert id="diary_write" parameterType="kr.catchup.mapper.DiaryVo2">
+	    
+	    insert into t_diary(diary_title, diary_content, diary_dt, diary_id, diary_temp, diary_humid, diary_percent, diary_pesti, diary_cnt) 
+	    values(#{diary_title} ,#{diary_content},#{diary_dt},#{diary_id},#{diary_temp} ,#{diary_humid} ,#{diary_percent} ,#{diary_pesti},#{diary_cnt})
+	    <!-- values(#{diary_title} ,#{diary_content},#{diary_dt},#{diary_id},#{diary_temp} ,#{diary_humid} ,#{diary_percent} ,#{diary_pesti},#{diary_cnt}) -->;
+	</insert>
+	
+     <select id="reservation_count" parameterType="kr.catchup.mapper.ResVo" resultType="int">
+         select count(*) from t_monitor where user_id = #{user_id} and DATE_FORMAT(#{res_rsvtime},'%y/%M/%D') = DATE_FORMAT(monit_time,'%y/%M/%D') and monit_area = '1';
+     </select>
+     
+     <select id="resPesticide" parameterType="kr.catchup.mapper.ResVo" resultType="kr.catchup.mapper.ResVo">
+         select * from t_reservation where user_id = #{user_id} and DATE_FORMAT(#{res_rsvtime},'%y/%M/%D') = DATE_FORMAT(res_rsvtime,'%y/%M/%D');
+     </select>
+     
+     <select id="select_diarylist" parameterType="kr.catchup.mapper.DiaryVo" resultType="kr.catchup.mapper.DiaryVo">
+         select * from t_diary where  diary_id = #{diary_id} and DATE_FORMAT(#{diary_dt},'%y/%M/%D') = DATE_FORMAT(diary_dt,'%y/%M/%D');
+     </select>
+     
+     <select id="all_diarylist" parameterType="kr.catchup.mapper.DiaryVo" resultType="kr.catchup.mapper.DiaryVo">
+         select * from t_diary where diary_id = #{diary_id} order by diary_dt desc;
+     </select>
+     
 </mapper>
