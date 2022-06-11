@@ -77,13 +77,10 @@
         <activity
             android:name=".DiaryMain"
             android:exported="true" />
-<<<<<<< HEAD
-=======
 
         <activity
             android:name=".DiaryContents"
             android:exported="true" />
->>>>>>> android
 
         <meta-data
             android:name="preloaded_fonts"

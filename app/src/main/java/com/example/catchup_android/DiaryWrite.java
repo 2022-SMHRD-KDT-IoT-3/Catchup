@@ -105,7 +105,7 @@ public class DiaryWrite extends AppCompatActivity {
     public void sendRequest(){
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        String url = "http://222.102.104.159:8081/app/diaryWrite.do";
+        String url = "http://211.223.37.232:8081/app/diaryWrite.do";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -140,17 +140,25 @@ public class DiaryWrite extends AppCompatActivity {
                 String id = vo.getId();*/
                 String diary_title = edt_title.getText().toString();
                 String diary_content = edt_content.getText().toString();
+                String temp = tv_temp.getText().toString();
+                String temp_diary=temp.replaceAll("[^0-9]","");
+                String humid = tv_humid.getText().toString();
+                String humid_diary=humid.replaceAll("[^0-9]","");
+                String disease = tv_disease.getText().toString();
+                String disease_diary=disease.replaceAll("[^0-9]","");
+                String cnt = tv_cnt.getText().toString();
+                String cnt_diary=cnt.replaceAll("[^0-9]","");
 
                 //params.put("diary_seq","0");
                 params.put("diary_title",diary_title);
                 params.put("diary_content",diary_content);
                 params.put("diary_dt", diary_vo.getDiary_dt());
                 params.put("diary_id",info.getId());
-                params.put("diary_temp",tv_temp.getText().toString());
-                params.put("diary_humid",tv_humid.getText().toString());
-                params.put("diary_percent",tv_disease.getText().toString());
+                params.put("diary_temp",temp_diary);
+                params.put("diary_humid",humid_diary);
+                params.put("diary_percent",disease_diary);
                 params.put("diary_pesti",tv_pesti.getText().toString());
-                params.put("diary_cnt",tv_cnt.getText().toString());
+                params.put("diary_cnt",cnt_diary);
 
                 Log.v("idvalues",params.toString());
 

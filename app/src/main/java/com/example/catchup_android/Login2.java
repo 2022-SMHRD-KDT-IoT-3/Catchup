@@ -145,7 +145,7 @@ public class Login2 extends AppCompatActivity {
 
                          LoginCheck.info = new UserVo(id,pw,name,nick,mail,serial,joindate);
 
-                        Intent intent = new Intent(getApplicationContext(),Home.class );
+                        Intent intent = new Intent(getApplicationContext(),MyFarm.class );
                         startActivity(intent);
                         finish();
 

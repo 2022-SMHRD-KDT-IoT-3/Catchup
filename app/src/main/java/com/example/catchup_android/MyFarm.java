@@ -134,7 +134,7 @@ public class MyFarm extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://222.102.104.159:8081/app/reservationCount.do";
+        String url="http://211.223.37.232:8081/app/reservationCount.do";
 
 
         // 요청시 필요한 문자열 객체
@@ -220,7 +220,7 @@ public class MyFarm extends AppCompatActivity {
                 intent.putExtra("temprt",temp);
                 intent.putExtra("humid",humid);
                 intent.putExtra("disease",disease);
-                intent.putExtra("cnt",String.valueOf(cnt));
+                intent.putExtra("cnt","2");
                 intent.putExtra("pesti",disease);
                 intent.putExtra("date",res_rsvtime);
                 startActivity(intent);
@@ -243,7 +243,7 @@ public class MyFarm extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/selectEnv.do";
+        String url="http://211.223.37.232:8081/app/selectEnv.do";
 
 
         // 요청시 필요한 문자열 객체
@@ -318,7 +318,7 @@ public class MyFarm extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/getInfected.do";
+        String url="http://211.223.37.232:8081/app/getInfected.do";
 
 
         // 요청시 필요한 문자열 객체

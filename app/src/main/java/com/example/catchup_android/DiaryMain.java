@@ -139,7 +139,7 @@ public class DiaryMain extends AppCompatActivity {
                 // Request 객체 생성
                 requestQueue= Volley.newRequestQueue(getApplicationContext());
                 // 서버에 요청할 주소
-                String url="http://222.102.104.159:8081/app/resPesticide";
+                String url="http://211.223.37.232:8081/app/resPesticide.do";
 
 
                 // 요청시 필요한 문자열 객체
@@ -226,7 +226,7 @@ public class DiaryMain extends AppCompatActivity {
                 // RequestQueue 객체 생성
                 requestQueue = Volley.newRequestQueue(getApplicationContext());
                 // 서버에 요청할 주소
-                String url1 = "http://222.102.104.159:8081/app/selectDiaryList.do";
+                String url1 = "http://211.223.37.232:8081/app/selectDiaryList.do";
                 // 요청시 필요한 문자열 객체(get or post, 어디로 통신, 응답시 받아올) 스피링은 post
 
                 Log.v("stringRequest",stringRequest.toString());
