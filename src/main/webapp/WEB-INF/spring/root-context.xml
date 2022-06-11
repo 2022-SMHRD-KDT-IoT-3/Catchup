@@ -14,9 +14,9 @@
 		</property>
 
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/mysql"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="12345"></property>
+			value="jdbc:mysql://localhost:3306/catchup_db"></property>
+		<property name="username" value="catchup_user"></property>
+		<property name="password" value="1234"></property>
 		
 		<!-- cgi
 		<property name="jdbcUrl" 

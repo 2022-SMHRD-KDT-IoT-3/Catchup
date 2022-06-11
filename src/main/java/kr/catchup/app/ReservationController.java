@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 
 import kr.catchup.mapper.DiaryVo;
 import kr.catchup.mapper.DiaryVo2;
+import kr.catchup.mapper.MonitVo;
 import kr.catchup.mapper.ResVo;
 import kr.catchup.mapper.ReservationMapper;
 import kr.catchup.mapper.UserVo;
@@ -31,7 +32,7 @@ public class ReservationController {
 	public void Reservation_list(ResVo vo, HttpServletResponse response){
 		System.out.println(vo);
 		System.out.println("예약목록 보기");
-//		
+		response.setCharacterEncoding("utf-8");
 		List<ResVo> list = mapper.Reservation_list(vo);
 		System.out.println(list);
 		Gson gson = new Gson();
@@ -59,6 +60,15 @@ public class ReservationController {
 		System.out.println("예약제거");
 		mapper.Reservation_remove(vo);
 	}
+	@RequestMapping("/Reservation_start.do")
+	public String Reservation_start(MonitVo vo){
+		System.out.println(vo);
+		System.out.println("현재예약시작");
+		String id = vo.getUser_id();
+		String section = vo.getMonit_area();
+		
+		return "redirect:http://192.168.131.244:5000/startIOT?id="+id+"&section="+section;
+	}
 	
 	// 방제 횟수 기능
 	@RequestMapping("/reservationCount.do")
@@ -83,10 +93,11 @@ public class ReservationController {
 	
 	
 	// 방제약품 불러오는 기능
-	@RequestMapping("/resPesticide")
+	@RequestMapping("/resPesticide.do")
 	public void resPesticide(ResVo vo, HttpServletResponse response) {
 		System.out.println("방제약품 불러오기 기능 실행");
 		System.out.println(vo);
+		response.setCharacterEncoding("utf-8");
 		
 		List<ResVo> res_list = mapper.resPesticide(vo);
 		System.out.println("방제약품 목록");
@@ -155,6 +166,7 @@ public class ReservationController {
 	public void selectDiaryList(DiaryVo vo, HttpServletResponse response) {
 		System.out.println("선택 다이어리 불러오기 기능 실행");
 		System.out.println(vo);
+		response.setCharacterEncoding("utf-8");
 		
 		List<DiaryVo> list = mapper.select_diarylist(vo);
 		System.out.println("Diarylist" + list);
@@ -178,6 +190,7 @@ public class ReservationController {
 	public void allDiaryList(DiaryVo vo, HttpServletResponse response) {
 		System.out.println("모든 다이어리 내용 불러오기 기능 실행");
 		System.out.println(vo);
+		response.setCharacterEncoding("utf-8");
 		
 		List<DiaryVo> list = mapper.all_diarylist(vo);
 		System.out.println("Alldiarylist" + list);

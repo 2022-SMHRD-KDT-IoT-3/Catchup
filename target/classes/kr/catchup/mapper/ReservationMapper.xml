@@ -19,7 +19,7 @@
          delete from t_reservation where res_seq = #{res_seq}
      </delete>
     
-     <insert id="diary_write" parameterType="kr.catchup.mapper.DiaryVo2">
+     <insert id="diary_write" parameterType="kr.catchup.mapper.DiaryVo">
 	    
 	    insert into t_diary(diary_title, diary_content, diary_dt, diary_id, diary_temp, diary_humid, diary_percent, diary_pesti, diary_cnt) 
 	    values(#{diary_title} ,#{diary_content},#{diary_dt},#{diary_id},#{diary_temp} ,#{diary_humid} ,#{diary_percent} ,#{diary_pesti},#{diary_cnt})
