@@ -28,7 +28,7 @@
 
 
 
-## 3. 개발환경 ~
+## 3. 개발환경 
 
 - 개발언어 : <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 - 개발도구 : <img src="https://camo.githubusercontent.com/9472577b4d152be7dd6822417f3703926b23de98d7b08204505e4753aebc55c5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f45636c69707365204944452d3243323235352e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d65636c6970736520696465266c6f676f436f6c6f723d7768697465"> ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white) <img src="https://camo.githubusercontent.com/f64232dc8fb426d866d9e40379e5eafbcf2d739a4fb1e895440666522d1d0f73/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f41726475696e6f2d3030393739442e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d41726475696e6f266c6f676f436f6c6f723d7768697465"> ![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
@@ -37,7 +37,7 @@
 - 데이터베이스 : <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 - 형상관리 : <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> 
 
-## 4. 대표이미지 ~
+## 4. 대표이미지 
 ![image](https://user-images.githubusercontent.com/99382034/173719407-09cfe752-c0b0-4c75-94e2-b85e47727f09.jpg )
 
 
@@ -65,7 +65,7 @@
 ![image](https://user-images.githubusercontent.com/99382034/173719421-8c8f1f3e-83c3-4cb7-aa29-8c62febba3d6.png )
 
 
-## 10.팀원 소개 및 업무분장 ~
+## 10.팀원 소개 및 업무분장 
 ![imgage]( https://user-images.githubusercontent.com/99382034/173722506-18a731ca-0147-4d08-b919-15389c3fa88e.jpg )
 
 
