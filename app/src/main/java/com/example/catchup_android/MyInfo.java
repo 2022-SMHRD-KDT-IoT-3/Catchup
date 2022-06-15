@@ -81,7 +81,7 @@ public class MyInfo extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/updateInfo.do";
+        String url="http://192.168.131.151:8081/app/updateInfo.do";
 
 
         // 요청시 필요한 문자열 객체

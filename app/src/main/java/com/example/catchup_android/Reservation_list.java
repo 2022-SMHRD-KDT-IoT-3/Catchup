@@ -123,7 +123,7 @@ public class Reservation_list extends AppCompatActivity {
         // RequestQueue 객체 생성
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url = "http://211.223.37.232:8081/app/Reservation_remove.do";
+        String url = "http://192.168.131.151:8081/app/Reservation_remove.do";
         // 요청시 필요한 문자열 객체(get or post, 어디로 통신, 응답시 받아올) 스피링은 post
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             // 응답데이터 받아오는 곳
@@ -180,7 +180,7 @@ public class Reservation_list extends AppCompatActivity {
         // RequestQueue 객체 생성
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         // 서버에 요청할 주소
-        String url = "http://211.223.37.232:8081/app/Reservation_list.do";
+        String url = "http://192.168.131.151:8081/app/Reservation_list.do";
         // 요청시 필요한 문자열 객체(get or post, 어디로 통신, 응답시 받아올) 스피링은 post
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             // 응답데이터 받아오는 곳

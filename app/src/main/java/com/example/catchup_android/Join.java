@@ -94,7 +94,7 @@ public class Join extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext()); ///// 안쪽 내용을 this로 대체할수있다
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/idCheck.do";
+        String url="http://192.168.131.151:8081/app/idCheck.do";
 
         // 요청시 필요한 문자열 객체
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -183,7 +183,7 @@ public class Join extends AppCompatActivity {
         // Request 객체 생성
         requestQueue= Volley.newRequestQueue(getApplicationContext()); ///// 안쪽 내용을 this로 대체할수있다
         // 서버에 요청할 주소
-        String url="http://211.48.228.42:8081/app/joinInsert.do";
+        String url="http://192.168.131.151:8081/app/joinInsert.do";
 
         // 요청시 필요한 문자열 객체
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

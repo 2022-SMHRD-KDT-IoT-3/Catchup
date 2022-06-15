@@ -105,7 +105,7 @@ public class DiaryWrite extends AppCompatActivity {
     public void sendRequest(){
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        String url = "http://211.223.37.232:8081/app/diaryWrite.do";
+        String url = "http://192.168.131.151:8081/app/diaryWrite.do";
 
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
