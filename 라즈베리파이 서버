@@ -1,0 +1,89 @@
+import serial
+import time
+from flask import Flask, request, Response, redirect
+import requests
+import time
+
+
+
+# while True:
+#     response = requests.get("http://211.223.37.232:8081/app/login.do")
+#     time.sleep(5)
+#     print(response)
+
+ py_serial = serial.Serial(
+    
+     # Window
+     port='COM5',
+    
+     # 보드 레이트 (통신 속도)
+     baudrate=9600,
+ )
+
+app = Flask(__name__)
+
+    
+@app.route('/')
+def hellow_world():
+    return 'Hello World!'
+
+@app.route('/spring')
+def spring():
+    return redirect("http://192.168.131.151:8081/web/joinInsert.do")
+
+@app.route('/start',methods = ['GET','POST'])
+def start():
+    print("1")
+    if request.method =='GET':
+#         params = request.get_data()
+#         print(type(params))
+#         p = params.decode('utf-8')
+#         plist = p.split('&')
+#         nlist = plist[0].split('=')
+#         slist = plist[1].split('=')
+#         idlist = plist[2].split('=')
+        
+#         num = nlist[1]
+#         section = slist[1]
+#         id = idlist[1]
+        section = request.args.get('section')
+        id = request.args.get('id')
+        
+        print(f"section : {section}, id : {id}")
+        
+         commend = section
+             # 아두이노 값 전달
+         py_serial.write(commend.encode())
+         time.sleep(1)
+            
+    #딥러닝 서버로 값 보내기        
+    return redirect(f"http://211.223.37.232:8081/app/monitor.do?section={section}&id={id}")
+
+@app.route('/sprinkling')
+def sprinkling():
+    print("2")
+    if request.method == 'GET':
+        print("1")
+        num = request.args.get('num')
+        section = request.args.get('section')
+        id = request.args.get('id')
+        pre = request.args.get('pre')
+        
+        print(pre)
+        
+        # 아두이노 값전달
+        
+         commend = pre
+         py_serial.write(commend.encode())
+         time.sleep(1)
+        # 값받을때까지 기다리기
+        # 아두이노값받고 스프링 서버로 리다이렉트
+        
+    return redirect(f"http://192.168.131.151:8081/app/monitor.do?num={num}&section={section}&id={id}&pre={pre}")
+              
+
+if __name__ == '__main__':
+
+    app.run(
+    host="211.223.37.232",
+    port=5000)
